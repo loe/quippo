@@ -4,9 +4,11 @@
 <script type="text/javascript" charset="utf-8">
   // Move all flashes offscreen after 4 seconds
   document.observe('dom:loaded', function() {
-    $$(".flash").each(function(div) {
-      move_offset = div.viewportOffset()[1] + div.getHeight();
-      new Effect.Move(div, {x: 0, y: -move_offset, duration: 1.3, delay: 4});
-    });
-  })
+    flash = $('flash');
+    sky   = $('sky');
+    
+    move_offset = flash.viewportOffset()[1] + flash.getHeight();
+    
+    new Effect.Move(sky, {x: 0, y: -move_offset, duration: 1.3, delay: 4});
+  });
 </script>
