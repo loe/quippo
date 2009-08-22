@@ -22,8 +22,12 @@ body {
 
 #header h1 {
   position: absolute;
-  top: 10px;
-  left: -200px;
+  bottom: 0;
+  left: -40px;
+  background: url("/images/quippy.png"); /* TODO Swap out for the Quippo */
+  width: 300px;
+  height: 200px;
+  text-indent: -10000px;
 }
 
 /* =NAV */
