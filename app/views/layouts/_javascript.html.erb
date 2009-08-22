@@ -7,8 +7,8 @@
     flash = $('flash');
     sky   = $('sky');
     
-    move_offset = flash.viewportOffset()[1] + flash.getHeight();
+    move_offset = flash.getHeight();
     
-    new Effect.Move(sky, {x: 0, y: -move_offset, duration: 1.3, delay: 4});
-  });
+    new Effect.Move(sky, {mode: 'relative', x: 0, y: -move_offset, duration: 1.3});
+  }.delay(4));
 </script>
