@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require File.dirname(__FILE__) + '/../config/environment'
+require 'rubygems'
 require 'daemons'
 
 options = {
@@ -9,6 +9,4 @@ options = {
     :backtrace  => true
   }
 
-Daemons.run_proc('tracker', options) do
-  TweetTracker.new.track(Quippo.config.twitter[:track])
-end
+Daemons.run(File.join(File.dirname(__FILE__), 'tracker.rb'), options)
