@@ -6,7 +6,7 @@ module Quippo
       # "@term"
       term_seed   = terms.map { |t| "#{t}\s*" }.join("|")
       expression  = /(@|#)(#{term_seed})/
-      
+            
       string.gsub(expression, "").strip
     end
   end
