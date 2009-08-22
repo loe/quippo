@@ -24,7 +24,7 @@ class TweetTrackerTest < ActiveSupport::TestCase
 
       should "not add a quip" do
         quips_before = Quip.count
-        @tracker.add_quip(@tweet_hash)
+        @tracker.add_quip(@tweet_hash, ['qp'])
         assert quips_before == Quip.count
       end
     end
@@ -46,7 +46,7 @@ class TweetTrackerTest < ActiveSupport::TestCase
 
       should "add a quip" do
         quips_before = Quip.count
-        @tracker.add_quip(@tweet_hash)
+        @tracker.add_quip(@tweet_hash, ['qp'])
         assert quips_before + 1 == Quip.count
       end
     end
@@ -68,7 +68,7 @@ class TweetTrackerTest < ActiveSupport::TestCase
 
       should "not add a quip" do
         quips_before = Quip.count
-        @tracker.add_quip(@tweet_hash)
+        @tracker.add_quip(@tweet_hash, ['qp'])
         assert quips_before == Quip.count
       end
     end
@@ -90,7 +90,7 @@ class TweetTrackerTest < ActiveSupport::TestCase
 
       should "not add a quip" do
         quips_before = Quip.count
-        @tracker.add_quip(@tweet_hash)
+        @tracker.add_quip(@tweet_hash, ['qp'])
         assert quips_before == Quip.count
       end
     end
