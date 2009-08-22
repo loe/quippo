@@ -23,7 +23,7 @@ set :deploy_to, "/var/www/sites/u/apps/#{application}"
 set :use_sudo, false
 set :checkout, 'export'
 
-before "deploy:setup", "db:password"
+before "deploy:setup", "db:password", "twitter:generate_config"
 after "deploy:update_code", "deploy:symlink_configs", "deploy:gems"
 
 namespace :deploy do
