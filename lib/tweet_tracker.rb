@@ -15,7 +15,10 @@ class TweetTracker
   
   def add_quip(hash)
     if (user = User.find_by_twitter_id(hash[:user][:id])) && !Quip.exists?(:twitter_id => hash[:id])
-      user.quips.create(:twitter_id => hash[:id], :text => hash[:text]) if hash[:text] =~ WATCH_EXPRESSION
+      if hash[:text] =~ WATCH_EXPRESSION
+        puts "adding quip #{hash[:id]} from user #{hash[:user][:id]}"
+        user.quips.create(:twitter_id => hash[:id], :text => hash[:text])
+      end
     end
   end
 end
