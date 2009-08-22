@@ -44,9 +44,7 @@ body {
   height: 73px;
   margin: 0 auto 20px auto;
   border: 3px solid rgba(0, 0, 0, .5);
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
 
 #nav ul {
@@ -76,11 +74,37 @@ body {
 }
 
 #quips li {
-  margin: 0 0 40px 0;
+  margin: 0 0 10px 0;
+  padding: 20px;
 }
 
 #quips li:hover {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .05);
+  padding: 17px;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+
+#quips q {
+  display: block;
+  font-style: italic;
+}
+
+#quips cite, #quips em {
+  font-size: 14px;
+  font-style: normal;
+}
+
+#quips cite:before {
+  content: "~ ";
+}
+
+#quips cite {
+  color: rgba(0, 0, 0, .5);
+}
+
+#quips em {
+  color: rgba(0, 0, 0, .25);
 }
 
 /* =FOOTER */
