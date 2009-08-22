@@ -1,2 +1,11 @@
-username: quippopotamus
-password: hungryhungry69!
+development:
+  username: quippopotamus
+  password: hungryhungry69!
+  key: w7XT3FxsWrz3Sc58F4jw
+  secret: exbTlid23BgbiqTuzH0VJecR1E4ggwE9NZka6OI8kSA
+
+production:
+  username: quippopotamus
+  password: hungryhungry69!
+  key: UWf6uPbQGLNgoVALEaLEw
+  secret: EbUpm08dZlXxN0yRJbbCwm0yQom4FIiGF3Gkhu9524

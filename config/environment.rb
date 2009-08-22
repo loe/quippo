@@ -15,7 +15,7 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database
   # you must remove the Active Record framework.
-  config.frameworks -= [ :action_mailer ]
+  # config.frameworks -= [ :action_mailer ]
 
   # Specify gems that this application depends on.
   config.gem 'mislav-will_paginate',
@@ -27,6 +27,7 @@ Rails::Initializer.run do |config|
   config.gem 'oauth',
              :version => '0.3.2'
   config.gem 'moomerman-twitter_oauth',
+             :lib => 'twitter_oauth',
              :source => 'http://gems.github.com',
              :version => '>= 0.2.1'
              
