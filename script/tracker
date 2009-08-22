@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require File.dirname(__FILE__) + '/../config/environment'
+require 'daemons'
+
+options = {
+    :app_name   => 'tracker',
+    :dir_mode   => :script,
+    :dir        => '../tmp/pids',
+    :backtrace  => true
+  }
+
+Daemons.run_proc('tracker', options) do
+  TweetTracker.new.track(Quippo.config.twitter[:track])
+end
