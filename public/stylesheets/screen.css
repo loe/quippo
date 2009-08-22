@@ -9,7 +9,7 @@ HIERARCHY:
 /* =BASE */
 
 body {
-  background-color: #4baae1;
+  background: #4baae1 url('/images/bg_sky.png') repeat-x fixed left top;
 }
 
 /* =HEADER */
@@ -24,7 +24,7 @@ body {
   position: absolute;
   bottom: 0;
   left: -40px;
-  background: url("/images/quippy.png"); /* TODO Swap out for the Quippo */
+  background: url("/images/quippy.png") no-repeat;
   width: 300px;
   height: 200px;
   text-indent: -10000px;
