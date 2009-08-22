@@ -10,11 +10,6 @@
   <body class="<%= body_class %>">
     <div id="sky">
       <%= render :partial => 'layouts/flashes' -%>
-      <div id="flash">
-        <div id="flash_notice" class="success message">
-          <span>You've successfully logged in as <%= current_user.twitter_screen_name if current_user %>!</span>
-        </div>
-      </div>
       <div id="clouds"></div>
     </div>
     <div class="container_16">
@@ -28,11 +23,11 @@
               <li <%= "class=\"selected\"" if @user == current_user %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
               <li <%= "class=\"selected\"" unless @user %>><%= link_to 'All Quips', root_url %></li>
               <li><%= link_to 'Settings', '#' %></li>
-              <li><%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
+              <li><%= link_to 'Logout', logout_url, :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
             </ul>
           <%- else -%>
             <ul>
-              <li><%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %></li>
+              <li><%= link_to 'Login with Twitter', login_url, :id => 'login', :class => 'button' %></li>
             </ul>
             <h2>Store all of your favorite quips and quotes in one place. <em>Access them anywhere.</em></h2> 
           <%- end -%>
