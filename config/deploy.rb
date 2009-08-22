@@ -24,7 +24,7 @@ set :use_sudo, false
 set :checkout, 'export'
 
 before "deploy:setup", "db:password"
-after "deploy:update_code", "deploy:gems"
+after "deploy:update_code", "deploy:symlink_configs", "deploy:gems"
 
 namespace :deploy do
 
@@ -53,6 +53,11 @@ namespace :deploy do
   task :gems do
     sudo "rake -f #{release_path}/Rakefile gems:install", :pty => true
     sudo "rake -f #{release_path}/Rakefile gems:build", :pty => true
+  end
+  
+  desc "Symlink config files into the release path"
+  task :symlink_configs do
+    send(run_method, "ln -s #{shared_path}/config/twitter_api.yml #{release_path}/config/twitter_api.yml")
   end
   
   before :deploy do
