@@ -1,6 +1,4 @@
 development:
-  username: quippopotamus
-  password: hungryhungry69!
   key: w7XT3FxsWrz3Sc58F4jw
   secret: exbTlid23BgbiqTuzH0VJecR1E4ggwE9NZka6OI8kSA
   confirm_url: "http://quippo.local:3000/authorizations"
@@ -10,8 +8,6 @@ development:
     - "qp"
 
 production:
-  username: quippopotamus
-  password: hungryhungry69!
   key: UWf6uPbQGLNgoVALEaLEw
   secret: EbUpm08dZlXxN0yRJbbCwm0yQom4FIiGF3Gkhu9524
   confirm_url: "http://quippopotamus.r09.railsrumble.com/authorizations"

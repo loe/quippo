@@ -70,3 +70,13 @@ namespace :db do
     put db_password, "#{shared_path}/config/dbpassword" 
   end
 end
+
+namespace :twitter do
+  desc "Create Twitter login config"
+  task :generate_config do
+    set :twitter_login, Proc.new { Capistrano::CLI.password_prompt("Twitter screen name: ") }
+    set :twitter_password, Proc.new { Capistrano::CLI.password_prompt("Twitter password: ") }
+    run "mkdir -p #{shared_path}/config"
+    put YAML.dump('login' => twitter_login, 'password' => twitter_password), "#{shared_path}/config/twitter_api.yml"
+  end
+end
