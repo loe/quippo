@@ -4,6 +4,7 @@ Showing <%= pluralize @quips.size, 'quip' %> from <%= current_user ? 'your' : 't
 <%- @quips.each do |q| -%>
   <li>
     <%= q.text %>
+    <%= q.created_at %>
   </li>
 <%- end -%>
 </ol>
