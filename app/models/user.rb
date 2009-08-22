@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
       self.send(:"twitter_#{key}=", value) if self.respond_to?(:"twitter_#{key}=")
     end
   end
+  
+  def to_param
+    twitter_screen_name
+  end
 end

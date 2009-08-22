@@ -1,2 +1,12 @@
 <%= javascript_include_tag :defaults, :cache => true %>
 <%= yield :javascript %>
+
+<script type="text/javascript" charset="utf-8">
+  // Move all flashes offscreen after 4 seconds
+  document.observe('dom:loaded', function() {
+    $$(".flash").each(function(div) {
+      move_offset = div.viewportOffset()[1] + div.getHeight();
+      new Effect.Move(div, {x: 0, y: -move_offset, duration: 1.3, delay: 4});
+    });
+  })
+</script>

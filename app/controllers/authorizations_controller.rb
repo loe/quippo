@@ -41,7 +41,7 @@ class AuthorizationsController < ApplicationController
     end
     
     respond_to do |wants|
-      wants.html { redirect_to quips_url }
+      wants.html { redirect_to user_quips_url(@user) }
     end
   end
   

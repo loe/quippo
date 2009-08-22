@@ -9,6 +9,7 @@ class QuipsController < ApplicationController
     end
     
     respond_to do |wants|
+      flash.now[:notice] = "oh hi there"
       wants.html {  }
     end
   end
