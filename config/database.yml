@@ -23,7 +23,7 @@ production:
   password: <%= File.read(PASSWORD_FILE).chomp if File.readable? PASSWORD_FILE %>
   host: localhost
   encoding: utf8
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
   <<: *TEST
