@@ -7,5 +7,5 @@ Rails.backtrace_cleaner.add_silencer do |line|
 end
 
 # When debugging, uncomment the next line.
-# Rails.backtrace_cleaner.remove_silencers!
+ Rails.backtrace_cleaner.remove_silencers!
 
