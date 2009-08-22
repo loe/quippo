@@ -15,30 +15,18 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database
   # you must remove the Active Record framework.
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.frameworks -= [ :action_mailer ]
 
   # Specify gems that this application depends on.
-  config.gem 'RedCloth',
-             :lib => 'redcloth',
-             :version => '>= 4.2.2'
   config.gem 'mislav-will_paginate',
              :lib => 'will_paginate',
              :source => 'http://gems.github.com',
              :version => '~> 2.3.11'
-  # config.gem 'thoughtbot-clearance',
-  #            :lib => 'clearance',
-  #            :source => 'http://gems.github.com',
-  #            :version => '>= 0.7.0'
-  config.gem 'justinfrench-formtastic',
-             :lib => 'formtastic',
-             :source => 'http://gems.github.com',
-             :version => '~> 0.2.1'
-  config.gem 'thoughtbot-paperclip',
-             :lib => 'paperclip',
-             :source => 'http://gems.github.com',
-             :version => '>= 2.3.0'
   config.gem 'rack',
              :version => '>= 1.0.0'
+  config.gem 'moomerman-twitter_oauth',
+             :source => 'http://gems.github.com',
+             :version => '>= 0.2.1'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -65,4 +53,3 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 end
-
