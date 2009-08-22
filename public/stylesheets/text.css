@@ -1,9 +1,11 @@
 /*
 HIERARCHY:
   =BASE
-  =HEADER
-  =CONTENT
-  =QUIPS
+  =LINKS
+  =HEADINGS
+  =LISTS
+  =SKY
+  =NAV
 */
 
 /* =BASE */
@@ -72,11 +74,18 @@ li {
   margin-left: 30px;
 }
 
-/* =HEADER */
+/* =SKY */
 
-h1 {
-  letter-spacing: -.05em;
-  color: rgba(0, 0, 0, .1);
+#sky #flash .message span {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#sky #flash .success span {
+  background: url("/images/icons/tick.png") no-repeat;
+  padding-left: 20px;
+  color: #090;
 }
 
 /* =NAV */

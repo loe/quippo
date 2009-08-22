@@ -1,9 +1,12 @@
 /*
 HIERARCHY:
   =BASE
+  =SKY
   =HEADER
+  =NAV
   =CONTENT
   =QUIPS
+  =FOOTER
 */
 
 /* =BASE */
@@ -12,15 +15,31 @@ body {
   background: #4baae1;
 }
 
-/* =WRAPPER */
+/* =SKY */
 
 #sky {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10000;
+}
+
+#sky #flash {
+  background: #fff;
+  text-align: center;
+}
+
+#sky #flash .message {
+  padding: 20px 0;
+}
+
+#sky #flash .success {
+  background: url("/images/bg_message_success.png") repeat-x;
+}
+
+#sky #clouds {
   height: 200px;
   background: url("/images/bg_clouds.png") repeat-x;
-  z-index: 10000;
 }
 
 /* =HEADER */
@@ -34,10 +53,10 @@ body {
 #header h1 {
   position: absolute;
   bottom: 0;
-  left: -120px;
+  left: -130px;
   background: url("/images/quippy.png") no-repeat;
   width: 400px;
-  height: 240px;
+  height: 260px;
   text-indent: -10000px;
 }
 
@@ -45,7 +64,7 @@ body {
 
 #nav {
   position: absolute;
-  bottom: 40%;
+  bottom: 260px;
   width: 100%;
 }
 
@@ -74,6 +93,7 @@ body {
 
 #content {
   float: right;
+  margin-top: 200px;
   height: 1200px;
 }
 
