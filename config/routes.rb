@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :quips
 
   map.resources :users
+  
+  map.resources :authorizations
 
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
