@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta rel="shortcut icon" type="image/icon" href="/favicon.ico" />
     <title>quippo</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <%= stylesheet_link_tag 'reset', '960', 'screen', 'text', :media => 'all', :cache => true %>
   </head>
   <body class="<%= body_class %>">
@@ -21,6 +21,7 @@
               <li><%= link_to 'All Quips', '#' %></li>
               <li><%= link_to 'Settings', '#' %></li>
               <li><%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
+            </ul>
           <%- else -%>
             <%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %>
             <h2>Store all of your favorite quips and quotes in one place. <em>Access them anywhere.</em></h2> 
