@@ -9,5 +9,5 @@ options = {
     :backtrace  => true
   }
 
-puts "=> Booting Tweet Tracker"
+puts "=> Tweet Tracker!"
 Daemons.run(File.join(File.dirname(__FILE__), 'tracker.rb'), options)
