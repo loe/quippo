@@ -1,41 +1,84 @@
 /*
 HIERARCHY:
   =BASE
+  =SKY
   =HEADER
+  =NAV
   =CONTENT
   =QUIPS
+  =FOOTER
 */
 
 /* =BASE */
 
 body {
-  background-color: #4baae1;
+  background: #4baae1;
+}
+
+/* =SKY */
+
+#sky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+#sky #flash {
+  background: #fff url('/images/bg_flash.png') repeat-x bottom left;
+  text-align: center;
+}
+
+#sky #flash .message {
+  padding: 20px 0;
+}
+
+#sky #flash .success {
+  background: url("/images/bg_message_success.png") repeat-x;
+}
+
+#sky #clouds {
+  height: 200px;
+  background: url("/images/bg_clouds.png") repeat-x;
 }
 
 /* =HEADER */
 
 #header {
   position: fixed;
-  background: rgba(0, 0, 0, .05);
+/*  background: rgba(0, 0, 0, .05);*/
   height: 100%;
 }
 
 #header h1 {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: -130px;
+  background: url("/images/quippy.png") no-repeat;
+  width: 400px;
+  height: 260px;
+  text-indent: -10000px;
 }
 
 /* =NAV */
 
 #nav {
   position: absolute;
-  bottom: 50%;
+  bottom: 260px;
   width: 100%;
+}
+
+#nav #avatar {
+  display: block;
+  width: 73px;
+  height: 73px;
+  margin: 0 auto 20px auto;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
 
 #nav ul {
   list-style-type: none;
-/*  width: 100%;*/
 }
 
 #nav li {
@@ -50,11 +93,57 @@ body {
 
 #content {
   float: right;
+  margin-top: 200px;
   height: 1200px;
 }
 
 /* =QUIPS */
 
+#quips {
+  list-style-type: none;
+  color: rgba(0, 0, 0, .75);
+}
+
 #quips li {
-  margin-bottom: 40px;
+  margin: 0 0 10px 0;
+  padding: 20px;
+}
+
+#quips li:hover {
+  background-color: rgba(0, 0, 0, .05);
+  padding: 17px;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+
+#quips q {
+  display: block;
+  font-style: italic;
+}
+
+#quips cite, #quips em {
+  font-size: 14px;
+  font-style: normal;
+}
+
+#quips cite:before {
+  content: "~ ";
+}
+
+#quips cite {
+  color: rgba(0, 0, 0, .5);
+}
+
+#quips em {
+  color: rgba(0, 0, 0, .25);
+}
+
+/* =FOOTER */
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background: url("/images/grass.png") repeat-x;
+  width: 100%;
+  height: 60px;
 }

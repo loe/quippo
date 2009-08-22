@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'quips'
   map.resources :quips
 
-  map.resources :users
+  map.resources :users, :has_many => [:quips]
   
   map.resources :authorizations
 
@@ -28,9 +28,9 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # map.home '', :controller => 'home', :action => 'dashboard'
-  # map.with_options :controller => 'sessions'  do |m|
-  #   m.login  '/login',  :action => 'new'
-  #   m.logout '/logout', :action => 'destroy'
-  # end
+  map.with_options :controller => 'authorizations'  do |m|
+    m.login  '/login',  :action => 'new'
+    m.logout '/logout', :action => 'destroy'
+  end
 
 end

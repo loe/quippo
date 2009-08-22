@@ -23,8 +23,8 @@ set :deploy_to, "/var/www/sites/u/apps/#{application}"
 set :use_sudo, false
 set :checkout, 'export'
 
-before "deploy:setup", "db:password"
-after "deploy:update_code", "deploy:gems"
+before "deploy:setup", "db:password", "twitter:generate_config"
+after "deploy:update_code", "deploy:symlink_configs", "deploy:gems"
 
 namespace :deploy do
 
@@ -55,6 +55,11 @@ namespace :deploy do
     sudo "rake -f #{release_path}/Rakefile gems:build", :pty => true
   end
   
+  desc "Symlink config files into the release path"
+  task :symlink_configs do
+    send(run_method, "ln -s #{shared_path}/config/twitter_api.yml #{release_path}/config/twitter_api.yml")
+  end
+  
   before :deploy do
     if real_revision.empty?
       raise "The tag, revision, or branch #{revision} does not exist."
@@ -68,5 +73,15 @@ namespace :db do
     set :db_password, Proc.new { Capistrano::CLI.password_prompt("Remote database password: ") }
     run "mkdir -p #{shared_path}/config" 
     put db_password, "#{shared_path}/config/dbpassword" 
+  end
+end
+
+namespace :twitter do
+  desc "Create Twitter login config"
+  task :generate_config do
+    set :twitter_login, Proc.new { Capistrano::CLI.password_prompt("Twitter screen name: ") }
+    set :twitter_password, Proc.new { Capistrano::CLI.password_prompt("Twitter password: ") }
+    run "mkdir -p #{shared_path}/config"
+    put YAML.dump('login' => twitter_login, 'password' => twitter_password), "#{shared_path}/config/twitter_api.yml"
   end
 end

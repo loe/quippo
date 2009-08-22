@@ -1,9 +1,11 @@
 /*
 HIERARCHY:
   =BASE
-  =HEADER
-  =CONTENT
-  =QUIPS
+  =LINKS
+  =HEADINGS
+  =LISTS
+  =SKY
+  =NAV
 */
 
 /* =BASE */
@@ -12,7 +14,7 @@ body {
   font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
+p,dl,hr,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
   margin-bottom: 20px;
 }
 
@@ -72,9 +74,25 @@ li {
   margin-left: 30px;
 }
 
+/* =SKY */
+
+#sky #flash .message span {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#sky #flash .success span {
+  background: url("/images/icons/tick.png") no-repeat;
+  padding-left: 20px;
+  color: #090;
+}
+
 /* =NAV */
 
-#nav h2 {
+h2 {
+  margin-bottom: 20px;
+  letter-spacing: -.05em;
   text-align: center;
   color: rgba(0, 0, 0, .5);
 }
@@ -84,18 +102,27 @@ li {
   text-align: center;
   text-decoration: none;
   border: 0;
-  color: #fff;
-/*  border-radius: 12px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;*/
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .75);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 #nav li a:hover {
-  background-color: rgba(0, 0, 0, .25);
-
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
 }
 
-/*#nav li a#logout {
+#nav li a#login {
+  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat;
+  line-height: 40px;
+  text-transform: none;
+  color: #33ccff;
+}
+
+#nav li a#logout {
   background: url("/images/icons/power.png") no-repeat top center;
   width: 40px;
   height: 40px;
@@ -105,4 +132,4 @@ li {
 
 #nav li a#logout:hover {
   background-position: 0 -40px;
-}*/
+}

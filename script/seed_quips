@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'lorem'
+
+require File.dirname(__FILE__) + '/../config/environment'
+
+user_id, number_of_quips = ARGV
+
+user = User.find(user_id)
+
+number_of_quips.to_i.times do |i|
+  output = Lorem::Base.new('chars', (rand(100) + 40)).output
+  puts "seeding #{user.twitter_screen_name} with: #{output}"
+  user.quips.create :text => output
+end
