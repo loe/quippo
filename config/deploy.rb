@@ -1,5 +1,3 @@
-`ssh-add`
-
 # For migrations
 set :rails_env, 'production'
 
