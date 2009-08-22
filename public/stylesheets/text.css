@@ -96,14 +96,21 @@ h2 {
   font-size: 12px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, .75);
-/*  border-radius: 12px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;*/
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 #nav li a:hover {
   background-color: rgba(0, 0, 0, .25);
   color: #fff;
+}
+
+#nav li a#login {
+  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat;
+  line-height: 40px;
+  text-transform: none;
+  color: #33ccff;
 }
 
 #nav li a#logout {
