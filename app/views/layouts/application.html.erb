@@ -10,6 +10,9 @@
     <%= render :partial => 'layouts/flashes' -%>
     <%- if current_user -%>
       <p>You are logged in as <%= current_user.twitter_screen_name %></p>
+      <%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete' %>
+    <%- else -%>
+      <%= link_to 'Login from Twitter', new_authorization_url %>
     <%- end -%>
     <%= yield %>
     <%= render :partial => 'layouts/javascript' %>

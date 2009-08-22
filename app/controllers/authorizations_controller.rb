@@ -45,6 +45,13 @@ class AuthorizationsController < ApplicationController
     end
   end
   
+  def destroy
+    session[:user_id] = nil
+    respond_to do |wants|
+      wants.html { redirect_to quips_url }
+    end
+  end
+  
   protected
   
   def generate_client
