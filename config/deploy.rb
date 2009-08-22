@@ -1,6 +1,23 @@
-set :stages, %w(staging production)
-set :default_stage, 'staging'
-require 'capistrano/ext/multistage'
+# For migrations
+set :rails_env, 'production'
+
+# Who are we?
+set :application, 'quippo'
+set :repository, "git@github.com:railsrumble/rr09-team-228.git"
+set :scm, "git"
+set :deploy_via, :remote_cache
+set :branch, "production"
+
+# Where to deploy to?
+role :web, "69.164.192.68"
+role :app, "69.164.192.68"
+role :db,  "69.164.192.68", :primary => true
+
+# Deploy details
+set :user, "deploy"
+set :deploy_to, "/var/www/sites/u/apps/#{application}"
+set :use_sudo, false
+set :checkout, 'export'
 
 before "deploy:setup", "db:password"
 
@@ -13,17 +30,10 @@ namespace :deploy do
     symlink
     restart
   end
-  desc "Start the mongrels"
-  task :start do
-    send(run_method, "cd #{deploy_to}/#{current_dir} && #{mongrel_rails} cluster::start --config #{mongrel_cluster_config}")
-  end
-  desc "Stop the mongrels"
-  task :stop do
-    send(run_method, "cd #{deploy_to}/#{current_dir} && #{mongrel_rails} cluster::stop --config #{mongrel_cluster_config}")
-  end
+
   desc "Restart the mongrels"
   task :restart do
-    send(run_method, "cd #{deploy_to}/#{current_dir} && #{mongrel_rails} cluster::restart --config #{mongrel_cluster_config}")
+    send(run_method, "cd #{deploy_to}/#{current_dir} && touch tmp/restart.txt")
   end
   desc "Run this after every successful deployment" 
   task :after_default do
