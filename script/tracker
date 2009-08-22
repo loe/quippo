@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../config/environment'
 require 'daemons'
 
 options = {
-    :app_name   => 'tweet_tracker',
+    :app_name   => 'tracker',
     :dir_mode   => :script,
     :dir        => '../tmp/pids',
     :backtrace  => true
