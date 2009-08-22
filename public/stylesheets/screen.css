@@ -30,8 +30,19 @@ body {
 
 #nav {
   position: absolute;
-  bottom: 50%;
+  bottom: 40%;
   width: 100%;
+}
+
+#nav #avatar {
+  display: block;
+  width: 73px;
+  height: 73px;
+  margin: 0 auto 20px auto;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 12px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 20px;
 }
 
 #nav ul {
@@ -57,4 +68,14 @@ body {
 
 #quips li {
   margin-bottom: 40px;
+}
+
+/* =FOOTER */
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background: url("/images/grass.png") repeat-x;
+  width: 100%;
+  height: 60px;
 }

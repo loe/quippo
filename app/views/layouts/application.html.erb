@@ -13,6 +13,7 @@
         <h1>Quippopotamus</h1>
         <div id="nav">
           <%- if current_user -%>
+            <%= link_to image_tag('/images/avatar.png', :size => '73x73', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
             <h2><%= current_user.twitter_screen_name %></h2>
             <ul>
               <li><%= link_to 'My Quips', '#' %></li>
@@ -20,7 +21,7 @@
               <li><%= link_to 'Settings', '#' %></li>
               <li><%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
           <%- else -%>
-            <div class="buttons"><%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %></div>
+            <%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %>
             <h2>Store all of your favorite quips and quotes in one place. <em>Access them anywhere.</em></h2> 
           <%- end -%>
         </div>
@@ -29,6 +30,7 @@
         <%= yield %>
       </div>
     </div>
+    <div id="footer"></div>
     <%= render :partial => 'layouts/javascript' %>
   </body>
 </html>
