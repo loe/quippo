@@ -24,7 +24,7 @@ body {
   position: absolute;
   bottom: 0;
   left: -40px;
-  background: url("/images/avatar.png"); /* TODO Swap out for the Quippo */
+  background: url("/images/quippy.png"); /* TODO Swap out for the Quippo */
   width: 300px;
   height: 200px;
   text-indent: -10000px;
