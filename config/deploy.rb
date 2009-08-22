@@ -6,7 +6,9 @@ set :application, 'quippo'
 set :repository, "git@github.com:railsrumble/rr09-team-228.git"
 set :scm, "git"
 set :deploy_via, :remote_cache
-set :branch, "production"
+set :branch, "master"
+
+set :ssh_options, { :forward_agent => true }
 
 # Where to deploy to?
 role :web, "69.164.192.68"
@@ -20,26 +22,26 @@ set :use_sudo, false
 set :checkout, 'export'
 
 before "deploy:setup", "db:password"
+after "deploy:update_code", "deploy:gems"
 
 namespace :deploy do
-  desc "Default deploy - updated to run migrations"
-  task :default do
-    set :migrate_target, :latest
-    update_code
-    migrate
-    symlink
-    restart
-  end
 
   desc "Restart the mongrels"
   task :restart do
     send(run_method, "cd #{deploy_to}/#{current_dir} && touch tmp/restart.txt")
   end
+  
   desc "Run this after every successful deployment" 
   task :after_default do
     cleanup
   end
-
+  
+  desc "Install Gems"
+  task :gems do
+    sudo "rake -f #{release_path}/Rakefile gems:install", :pty => true
+    sudo "rake -f #{release_path}/Rakefile gems:build", :pty => true
+  end
+  
   before :deploy do
     if real_revision.empty?
       raise "The tag, revision, or branch #{revision} does not exist."
