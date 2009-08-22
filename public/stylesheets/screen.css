@@ -22,7 +22,8 @@ body {
 
 #header h1 {
   position: absolute;
-  top: 0;
+  top: 10px;
+  left: -200px;
 }
 
 /* =NAV */
@@ -35,7 +36,6 @@ body {
 
 #nav ul {
   list-style-type: none;
-/*  width: 100%;*/
 }
 
 #nav li {

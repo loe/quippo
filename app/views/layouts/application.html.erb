@@ -17,7 +17,7 @@
             <ul>
               <li><%= link_to 'My Quips', '#' %></li>
               <li><%= link_to 'All Quips', '#' %></li>
-              <li><%= link_to 'Profile', '#' %></li>
+              <li><%= link_to 'Settings', '#' %></li>
               <li><%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
           <%- else -%>
             <div class="buttons"><%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %></div>
