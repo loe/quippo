@@ -1,4 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => 'quips'
+  map.resources :quips
+
+  map.resources :users
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
