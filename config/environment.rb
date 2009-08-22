@@ -29,6 +29,9 @@ Rails::Initializer.run do |config|
   config.gem 'moomerman-twitter_oauth',
              :source => 'http://gems.github.com',
              :version => '>= 0.2.1'
+             
+  config.gem 'yajl-ruby',
+             :lib => 'yajl'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
