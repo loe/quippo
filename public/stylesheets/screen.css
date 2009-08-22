@@ -9,20 +9,14 @@ HIERARCHY:
 /* =BASE */
 
 body {
-  background-color: #9cf;
-}
-
-/* =GRID =TWEAKS */
-
-.container_16 {
-  position: relative;
+  background-color: #4baae1;
 }
 
 /* =HEADER */
 
 #header {
   position: fixed;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .05);
   height: 100%;
 }
 
@@ -36,10 +30,20 @@ body {
 #nav {
   position: absolute;
   bottom: 50%;
+  width: 100%;
 }
 
-#nav .buttons {
-  width: 100%;
+#nav ul {
+  list-style-type: none;
+/*  width: 100%;*/
+}
+
+#nav li {
+  margin: 0;
+}
+
+#nav li a {
+  display: block;
 }
 
 /* =CONTENT */
