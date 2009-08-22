@@ -7,7 +7,7 @@ development:
   password: 
   host: localhost
   encoding: utf8
-  
+
 test: &TEST
   adapter: mysql
   database: quippo_test
@@ -15,16 +15,7 @@ test: &TEST
   password: 
   host: localhost
   encoding: utf8
-  
-staging:
-  adapter: mysql
-  database: quippo_staging
-  username: quippo
-  password: <%= File.read(PASSWORD_FILE).chomp if File.readable? PASSWORD_FILE %>
-  host: localhost
-  encoding: utf8
-  socket: /opt/local/var/run/mysql5/mysqld.sock
-  
+
 production:
   adapter: mysql
   database: quippo_production
