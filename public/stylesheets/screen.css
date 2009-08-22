@@ -1,3 +1,11 @@
+/*
+HIERARCHY:
+  =BASE
+*/
+
+/* =BASE */
+
 body {
   background-color: #9cf;
+  font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

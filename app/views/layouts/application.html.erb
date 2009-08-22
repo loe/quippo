@@ -4,17 +4,24 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>quippo</title>
-    <%= stylesheet_link_tag 'screen', :media => 'all', :cache => true %>
+    <%= stylesheet_link_tag 'reset', '960', 'screen', :media => 'all', :cache => true %>
   </head>
   <body class="<%= body_class %>">
     <%= render :partial => 'layouts/flashes' -%>
-    <%- if current_user -%>
-      <p>You are logged in as <%= current_user.twitter_screen_name %></p>
-      <%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete' %>
-    <%- else -%>
-      <%= link_to 'Login from Twitter', new_authorization_url %>
-    <%- end -%>
-    <%= yield %>
+    <div class="container_16">
+      <div id="header" class="grid_5">
+        <h1>Quippopotamus</h1>
+        <%- if current_user -%>
+          <p>You are logged in as <%= current_user.twitter_screen_name %></p>
+          <%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete' %>
+        <%- else -%>
+          <%= link_to 'Login from Twitter', new_authorization_url %>
+        <%- end -%>
+      </div>
+      <div id="content" class="grid_11">
+        <%= yield %>
+      </div>
+    </div>
     <%= render :partial => 'layouts/javascript' %>
   </body>
 </html>
