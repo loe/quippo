@@ -22,10 +22,13 @@ Rails::Initializer.run do |config|
              :lib => 'will_paginate',
              :source => 'http://gems.github.com',
              :version => '~> 2.3.11'
+             
   config.gem 'rack',
              :version => '>= 1.0.0'
+             
   config.gem 'oauth',
              :version => '0.3.2'
+             
   config.gem 'moomerman-twitter_oauth',
              :lib => 'twitter_oauth',
              :source => 'http://gems.github.com',
