@@ -1,10 +1,10 @@
-Showing <%= pluralize @quips.size, 'quip' %> from <%= current_user ? 'your' : 'the public' %> timeline.
+<p>Showing <%= pluralize @quips.size, 'quip' %> from <%= current_user ? 'your' : 'the public' %> timeline.</p>
 
 <ol id="quips">
 <%- @quips.each do |q| -%>
   <li>
-    <%= q.text %>
-    <%= q.created_at %>
+    <q>&ldquo;<%= q.text %>&rdquo;</q>
+    <cite>Author Name</cite> <em>at <%= q.created_at %></em>
   </li>
 <%- end -%>
 </ol>
