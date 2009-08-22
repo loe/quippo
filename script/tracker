@@ -10,5 +10,5 @@ options = {
   }
 
 Daemons.run_proc('tracker', options) do
-  TweetTracker.new.track(Quippo.config.twitter['track'])
+  TweetTracker.new.track(Quippo.config.twitter[:track])
 end
