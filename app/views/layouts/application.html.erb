@@ -3,28 +3,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta rel="shortcut icon" type="image/icon" href="/favicon.ico" />
     <title>quippo</title>
     <%= stylesheet_link_tag 'reset', '960', 'screen', 'text', :media => 'all', :cache => true %>
   </head>
   <body class="<%= body_class %>">
     <%= render :partial => 'layouts/flashes' -%>
     <div class="container_16">
-      <div id="header" class="grid_5">
+      <div id="header" class="grid_4">
         <h1>Quippopotamus</h1>
         <div id="nav">
           <%- if current_user -%>
-            <p>You are logged in as <%= current_user.twitter_screen_name %></p>
-            <%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete' %>
+            <%= link_to image_tag('/images/avatar.png', :size => '73x73', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
+            <h2><%= current_user.twitter_screen_name %></h2>
+            <ul>
+              <li><%= link_to 'My Quips', '#' %></li>
+              <li><%= link_to 'All Quips', '#' %></li>
+              <li><%= link_to 'Settings', '#' %></li>
+              <li><%= link_to 'Logout', authorization_url(current_user.id), :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
           <%- else -%>
-            <div class="buttons"><%= link_to 'Login from Twitter', new_authorization_url, :class => 'button' %></div>
+            <%= link_to 'Login with Twitter', new_authorization_url, :id => 'login', :class => 'button' %>
             <h2>Store all of your favorite quips and quotes in one place. <em>Access them anywhere.</em></h2> 
           <%- end -%>
         </div>
       </div>
-      <div id="content" class="grid_11">
+      <div id="content" class="grid_12">
         <%= yield %>
       </div>
     </div>
+    <div id="footer"></div>
     <%= render :partial => 'layouts/javascript' %>
   </body>
 </html>

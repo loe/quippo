@@ -9,37 +9,56 @@ HIERARCHY:
 /* =BASE */
 
 body {
-  background-color: #9cf;
-}
-
-/* =GRID =TWEAKS */
-
-.container_16 {
-  position: relative;
+  background-color: #4baae1;
 }
 
 /* =HEADER */
 
 #header {
   position: fixed;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .05);
   height: 100%;
 }
 
 #header h1 {
   position: absolute;
-  top: 0;
+  top: 10px;
+  left: -200px;
 }
 
 /* =NAV */
 
 #nav {
   position: absolute;
-  bottom: 50%;
+  bottom: 40%;
+  width: 100%;
 }
 
-#nav .buttons {
-  width: 100%;
+#nav #avatar {
+  display: block;
+  width: 73px;
+  height: 73px;
+  margin: 0 auto 20px auto;
+  border: 3px solid rgba(0, 0, 0, .5);
+  border-radius: 12px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 20px;
+}
+
+#nav #avatar img {
+  -webkit-border-radius: 10px; /* other-wise the image bleeds out from behind the rounded corners */
+}
+
+#nav ul {
+  list-style-type: none;
+}
+
+#nav li {
+  margin: 0;
+}
+
+#nav li a {
+  display: block;
 }
 
 /* =CONTENT */
@@ -53,4 +72,14 @@ body {
 
 #quips li {
   margin-bottom: 40px;
+}
+
+/* =FOOTER */
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background: url("/images/grass.png") repeat-x;
+  width: 100%;
+  height: 60px;
 }

@@ -28,9 +28,20 @@ after "deploy:update_code", "deploy:gems"
 
 namespace :deploy do
 
-  desc "Restart the mongrels"
+  desc "Start the Tracker"
+  task :start do
+    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker start")
+  end
+  
+  desc "Stop the Tracker"
+  task :stop do
+    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker stop")
+  end
+
+  desc "Restart Rails & Tracker"
   task :restart do
     send(run_method, "cd #{deploy_to}/#{current_dir} && touch tmp/restart.txt")
+    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker restart")
   end
   
   desc "Run this after every successful deployment" 
