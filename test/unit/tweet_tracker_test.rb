@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class TweetTrackerTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   context "#add_quip" do
     setup do
       @user = Factory.create(:user)
