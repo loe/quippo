@@ -1,7 +1,9 @@
 class QuipsController < ApplicationController
   def index
-    @quips = (1..10).map do |i|
-      Quip.new :text => "Quip #{i}"
+    if current_user
+      @quips = current_user.quips.all.paginate
+    else
+      @quips = Quip.all.paginate
     end
     
     respond_to do |wants|

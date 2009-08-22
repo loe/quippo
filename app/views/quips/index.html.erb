@@ -1,5 +1,9 @@
-<h1>Quippopotamus</h1>
+Showing <%= pluralize @quips.size, 'quip' %> from <%= current_user ? 'your' : 'the public' %> timeline.
 
+<ol id="quips">
 <%- @quips.each do |q| -%>
-  <%= q.text %>
+  <li>
+    <%= q.text %>
+  </li>
 <%- end -%>
+</ol>

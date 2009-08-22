@@ -1,0 +1,38 @@
+/*
+HIERARCHY:
+  =BASE
+  =LAYOUT
+  =QUIPS
+*/
+
+/* =BASE */
+
+body {
+  background-color: #9cf;
+  font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* =GRID =TWEAKS */
+
+.container_16 {
+  position: relative;
+}
+
+/* =LAYOUT */
+
+#header {
+  position: fixed;
+  background: rgba(0, 0, 0, .1);
+  height: 100%;
+}
+
+#content {
+  float: right;
+  height: 1200px;
+}
+
+/* =QUIPS */
+
+#quips li {
+  margin-bottom: 40px;
+}
