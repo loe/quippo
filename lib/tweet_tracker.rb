@@ -3,14 +3,18 @@ class TweetTracker
   
   WATCH_EXPRESSION = /(\b|#)qp\b|quippo/
   
-  def track(*query)
+  def track(*query, &block)
     query_string = URI.encode(query.join(","))
     
     uri = URI.parse("http://#{Quippo.config.twitter[:username]}:#{Quippo.config.twitter[:password]}@stream.twitter.com/track.json?track=#{query_string}")
     Yajl::HttpStream.get(uri, :symbolize_keys => true) do |hash|
       RAILS_DEFAULT_LOGGER.debug "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
       
-      add_quip(hash, query)
+      if block_given?
+        yield hash, query
+      else
+        add_quip(hash, query)
+      end
     end
   end
   
