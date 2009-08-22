@@ -18,7 +18,9 @@ class TweetTracker
     end
   end
   
-  def add_quip(hash, query)    
+  def add_quip(hash, query)
+    return if hash[:text] =~ /#fact/
+    
     if (user = User.find_by_twitter_id(hash[:user][:id])) && !Quip.exists?(:twitter_id => hash[:id])
       if hash[:text] =~ WATCH_EXPRESSION
         RAILS_DEFAULT_LOGGER.debug "adding quip #{hash[:id]} from user #{hash[:user][:id]}"
