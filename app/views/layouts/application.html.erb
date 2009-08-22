@@ -8,6 +8,9 @@
   </head>
   <body class="<%= body_class %>">
     <%= render :partial => 'layouts/flashes' -%>
+    <%- if current_user -%>
+      <p>You are logged in as <%= current_user.twitter_screen_name %></p>
+    <%- end -%>
     <%= yield %>
     <%= render :partial => 'layouts/javascript' %>
   </body>
