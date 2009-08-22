@@ -9,14 +9,25 @@ HIERARCHY:
 /* =BASE */
 
 body {
-  background: #4baae1 url('/images/bg_sky.png') repeat-x fixed left top;
+  background: #4baae1;
+}
+
+/* =WRAPPER */
+
+#sky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: url("/images/bg_clouds.png") repeat-x;
+  z-index: 10000;
 }
 
 /* =HEADER */
 
 #header {
   position: fixed;
-  background: rgba(0, 0, 0, .05);
+/*  background: rgba(0, 0, 0, .05);*/
   height: 100%;
 }
 
