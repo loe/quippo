@@ -10,7 +10,6 @@ class TweetTracker
     Yajl::HttpStream.get(uri, :symbolize_keys => true) do |hash|
       RAILS_DEFAULT_LOGGER.debug "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
       
-      puts "this query: #{query.inspect}"
       add_quip(hash, query)
     end
   end
