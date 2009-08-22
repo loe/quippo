@@ -1,7 +1,8 @@
 /*
 HIERARCHY:
   =BASE
-  =LAYOUT
+  =HEADER
+  =CONTENT
   =QUIPS
 */
 
@@ -9,7 +10,6 @@ HIERARCHY:
 
 body {
   background-color: #9cf;
-  font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* =GRID =TWEAKS */
@@ -18,13 +18,31 @@ body {
   position: relative;
 }
 
-/* =LAYOUT */
+/* =HEADER */
 
 #header {
   position: fixed;
   background: rgba(0, 0, 0, .1);
   height: 100%;
 }
+
+#header h1 {
+  position: absolute;
+  top: 0;
+}
+
+/* =NAV */
+
+#nav {
+  position: absolute;
+  bottom: 50%;
+}
+
+#nav .buttons {
+  width: 100%;
+}
+
+/* =CONTENT */
 
 #content {
   float: right;
