@@ -25,10 +25,10 @@ Rails::Initializer.run do |config|
              :lib => 'will_paginate',
              :source => 'http://gems.github.com',
              :version => '~> 2.3.11'
-  config.gem 'thoughtbot-clearance',
-             :lib => 'clearance',
-             :source => 'http://gems.github.com',
-             :version => '>= 0.7.0'
+  # config.gem 'thoughtbot-clearance',
+  #            :lib => 'clearance',
+  #            :source => 'http://gems.github.com',
+  #            :version => '>= 0.7.0'
   config.gem 'justinfrench-formtastic',
              :lib => 'formtastic',
              :source => 'http://gems.github.com',
