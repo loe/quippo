@@ -44,13 +44,9 @@ body {
   height: 73px;
   margin: 0 auto 20px auto;
   border: 3px solid rgba(0, 0, 0, .5);
-  border-radius: 12px;
+  border-radius: 10px;
   -moz-border-radius: 10px;
-  -webkit-border-radius: 20px;
-}
-
-#nav #avatar img {
-  -webkit-border-radius: 10px; /* other-wise the image bleeds out from behind the rounded corners */
+  -webkit-border-radius: 10px;
 }
 
 #nav ul {
@@ -74,8 +70,17 @@ body {
 
 /* =QUIPS */
 
+#quips {
+  list-style-type: none;
+  color: rgba(0, 0, 0, .75);
+}
+
 #quips li {
-  margin-bottom: 40px;
+  margin: 0 0 40px 0;
+}
+
+#quips li:hover {
+  background-color rgba(0, 0, 0, .1);
 }
 
 /* =FOOTER */
