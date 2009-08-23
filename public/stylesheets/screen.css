@@ -210,21 +210,26 @@ body {
 }
 
 #badges .button {
-  /*background-position: center center;
-    background-repeat: no-repeat;
-    display: inline-block;*/
-  /*float: left;*/
-  /*height: 16px;
-    width: 16px;
-    padding: 1px;
-    margin-top: 3px;
-    margin-left: 5px;*/
-  /*padding-left: 23px;*/
-  /*text-indent: -10000px;*/
+  background: transparent center no-repeat;
+  border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
+  display: inline-block;
+  text-indent: -10000px;
 }
 
-#badges img {
+/*#badges img {
   border: 1px solid rgba(0, 0, 0, .2);
+}*/
+
+#badges #jquery {
+  height: 15px;
+  width: 70px;
+  background-image: url('/images/jquery_badge.png');
+}
+
+#badges #prototype {
+  height: 15px;
+  width: 86px;
+  background-image: url('/images/prototype_badge.png');
 }
 
 /*#badges #jquery {
