@@ -17,6 +17,8 @@ class Quip < ActiveRecord::Base
     {:conditions => conditions_array}
   }
   
+  before_create :filter_attributions!
+  
   can_search do
     add_existing_scope :text_search
   end
