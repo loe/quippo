@@ -210,14 +210,17 @@ body {
 }
 
 #badges span {
+  float: left;
   font-style: normal;
   font-size: 12px;
+  padding-top: 1px;
 }
 
 #badges .button {
   background: transparent center no-repeat;
   border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
-  display: inline-block;
+  float: left;
+  margin-top: -2px;
   padding-left: 0;
   padding-right: 0;
   text-indent: -10000px;
