@@ -4,6 +4,6 @@ begin
   puts "=> Tracking: #{Quippo.config.twitter[:track].join(", ")}"
   TweetTracker.new.track(*Quippo.config.twitter[:track])
 rescue Yajl::ParseError => e
-  puts "Encountered a Yajl::ParserError: #{e.message}"
+  HoptoadNotifier.notify(e)
   retry
 end

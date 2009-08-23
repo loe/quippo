@@ -103,4 +103,24 @@ class TweetTrackerTest < ActiveSupport::TestCase
     
   end
   
+  context "#delete_quip" do
+    setup do
+      @tracker = TweetTracker.new
+      @tweet_hash = {
+        :delete => {
+          :status => {
+            :id => 12345
+          }
+        }
+      }
+    end
+    
+    should "delete the quip" do
+      Factory.create(:quip, :twitter_id => 12345)
+      quips_before = Quip.count
+      @tracker.delete_quip(@tweet_hash, ['qp'])
+      assert (quips_before - 1) == Quip.count
+    end
+  end
+  
 end
