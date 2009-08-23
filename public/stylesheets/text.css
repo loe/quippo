@@ -223,20 +223,21 @@ input {
 
 .editable:hover {
   background-color: rgba(255, 255, 204, 1);
-  border: 1px dashed rgba(0, 0, 0, .25);
 }
 
 /* =BUTTONS */
 
 .buttons {
+  line-height: 20px;
   font-size: 11px;
   text-transform: uppercase;
 }
 
-.button:link, .button:visited {
+.buttons .button {
   background-color: rgba(0, 0, 0, .25);
   padding: 3px 10px;
   border: 0;
+  line-height: 14px;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: .05em;
@@ -245,9 +246,14 @@ input {
   color: #fff;
   border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
   text-shadow: 0 -1px rgba(0, 0, 0, .5);
-  
 }
 
-.button:hover, .button:active {
+.buttons .button:hover {
   background-color: rgba(0, 0, 0, .5);
+}
+
+.buttons .passive {
+  background-color: rgba(0, 0, 0, .05);
+  text-shadow: none;
+  color: rgba(0, 0, 0, .5);
 }
