@@ -23,7 +23,40 @@ class QuipsController < ApplicationController
       wants.json { render :json => @quips.to_json(:include => :user) }
     end
   end
-  
+
+  # GET /quips/1/edit
+  def edit    
+    @quip = Quip.find(params[:id])
+  end
+
+  # PUT /quips/1
+  # PUT /quips/1.xml
+  def update
+    @quip = Quip.find(params[:id])
+
+    respond_to do |format|
+      if @quip.update_attributes(params[:quip])
+        format.js   { render :json => @quip }
+        format.xml  { head :ok }
+      else
+        format.js   { render :json => @quip }
+        format.xml  { render :xml => @quip.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /quips/1
+  # DELETE /quips/1.xml
+  def destroy
+    @quip = Quip.find(params[:id])
+    @quip.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(quips_url) }
+      format.xml  { head :ok }
+    end
+  end
+
   protected
   
   def get_user
