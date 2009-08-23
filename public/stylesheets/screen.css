@@ -150,43 +150,12 @@ body {
 /* =SEARCH */
 
 #search {
-  background-color: rgba(0, 0, 0, .2);
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
   overflow: hidden;
   padding: 5px;
 }
 
 #search input {
-  border: 0 none;
-  float: left;
-  font-size: 18px;
-  margin-right: 10px;
-  /*opacity: .75;*/
-  padding: 5px;
   width: 100%;
-}
-
-#search .search.button {
-  background: transparent url('/images/icons/magnifying_glass.png') no-repeat left center;
-  border-bottom: 0 none;
-  display: block;
-  float: left;
-  height: 32px;
-  width: 32px;
-  text-indent: -10000px;
-}
-
-#search a.button:link, #search a.button:visited {
-  opacity: .5;
-}
-
-#search a.button:hover, #search a.button:active {
-  opacity: 1;
 }
 
 /* =FOOTER */
