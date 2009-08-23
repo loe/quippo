@@ -139,13 +139,9 @@ h2 {
 }
 
 #nav li a#login {
-  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat 10px 50%;
-  padding-left: 40px;
-/*  line-height: 40px;*/
-border-top: 1px solid rgba(255, 255, 255, .5);
-border-bottom: 1px solid rgba(0, 0, 0, .25);
-border-right: 1px solid rgba(0, 0, 0, .25);
-border-left: 1px solid rgba(255, 255, 255, .5);
+  background: #a2e7ff url("/images/bg_button.png") repeat-x bottom center;
+  padding-left: 10px;
+  font-size: 14px;
   text-transform: none;
   text-shadow: none;
   text-align: left;
@@ -153,7 +149,7 @@ border-left: 1px solid rgba(255, 255, 255, .5);
 }
 
 #nav li a#login:hover {
-  background-color: #3cf;
+  background-color: rgba(0, 0, 0, .75);
   color: #fff;
 }
 
