@@ -6,7 +6,7 @@
 /* Basic Layout */
 
 #quip_container {
-  font:normal 16px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font:normal 14px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
   line-height:20px;
 }
 
@@ -30,7 +30,7 @@
   color: #949494;
   color: rgba(0,0,0,0.5);
   display:block;
-  font-size:14px;
+  font-size:12px;
   font-style:normal;
 }
 
