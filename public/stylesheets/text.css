@@ -7,6 +7,7 @@ HIERARCHY:
   =SKY
   =NAV
   =CONTENT
+  =BUTTONS
 */
 
 /* =BASE */
@@ -174,6 +175,10 @@ h2 {
   font-style: italic;
 }
 
+#quips #edit_quip_text {
+  font-style: italic;
+}
+
 #quips cite, #quips em {
   font-size: 14px;
   font-style: normal;
@@ -197,4 +202,36 @@ h2 {
 
 #quips em a:hover, #quips em a:active {
   color: rgba(0, 0, 0, .75);
+}
+
+/* =FORMS */
+
+input {
+  padding: 3px;
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-right: 1px solid rgba(0, 0, 0, .25);
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+  border-left: 1px solid rgba(0, 0, 0, .5);
+  font: inherit;
+}
+
+/* =BUTTONS */
+
+.button:link, .button:visited {
+  background-color: rgba(0, 0, 0, .25);
+  padding: 5px 10px;
+  border: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  vertical-align: text-top;
+  color: #fff;
+  border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
+  
+}
+
+.button:hover, .button:active {
+  background-color: rgba(0, 0, 0, .5);
 }
