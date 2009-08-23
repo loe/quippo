@@ -24,6 +24,19 @@ class Quip < ActiveRecord::Base
   validates_presence_of :text
   
   def filter_attributions!
+    hashtags = extract_hashtags!
     
+    # Match '"I am a quote" - Attribution'
+  end
+  
+  private
+  
+  # Extract all hashtags from the text and return them in an array.
+  def extract_hashtags!
+    regex = /#\w+(\s+|\b)/
+    tags  = text.scan regex
+    
+    text.gsub!(regex, '')
+    tags
   end
 end

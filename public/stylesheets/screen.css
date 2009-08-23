@@ -169,6 +169,17 @@ body {
   margin-bottom: 20px;
 }
 
+/* =SEARCH */
+
+#search {
+  overflow: hidden;
+  padding: 5px;
+}
+
+#search input {
+  width: 100%;
+}
+
 /* =FOOTER */
 
 #footer {
