@@ -8,8 +8,8 @@
     <div id="listing" class="grid_10 prefix_4">
       <p>Showing <strong id="quip_count"><%= pluralize @quips.size, 'quip' %></strong> from <strong><%= identify_user(@user) %> timeline.</strong></p>
       <div id="badges">
-        <%= link_to_remote 'jQuery Badge', :url => badge_info_url('jquery', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
-        <%= link_to_remote 'Prototype Badge', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
+        <%= link_to_remote 'jQuery Badge', :url => badge_info_url('jquery', :format => 'js', :badge_url => @badge_url), :html => {:id => 'jquery'}, :method => 'get' %>
+        <%= link_to_remote 'Prototype Badge', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :html => {:id => 'prototype'}, :method => 'get' %>
       </div>
     </div>
   </div>

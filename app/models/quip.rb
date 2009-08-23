@@ -50,6 +50,7 @@ class Quip < ActiveRecord::Base
   def perform_filters!
     return if filter_quote_style!
     return if filter_parenthetical_retweet_style!
+    filter_prefix_retweet_style!
   end
   
   def filter_quote_style!
@@ -76,5 +77,17 @@ class Quip < ActiveRecord::Base
     else
       false
     end
+  end
+  
+  def filter_prefix_retweet_style!
+     regex = /RT (@\w+):*/i
+     
+     if match = text.match(regex)
+       self.text.gsub!(regex, '')
+       self.attribution = match.captures.first
+       true
+     else
+       false
+     end
   end
 end
