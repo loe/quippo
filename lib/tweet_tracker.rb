@@ -1,7 +1,7 @@
 class TweetTracker
   require 'yajl/http_stream'
 
-  WATCH_EXPRESSION = /(\b|#)qp\b|quippo/
+  WATCH_EXPRESSION = /(#)(qp|quippo)/
 
   def track(*query, &block)
     query_string = URI.encode(query.join(","))
@@ -24,7 +24,7 @@ class TweetTracker
   end
 
   def add_quip(hash, query)
-    return if hash[:text] =~ /#fact/
+    return if hash[:text] =~ /#fact/ # optimization for another crazy optimization
 
     if (user = User.find_by_twitter_id(hash[:user][:id])) && !Quip.exists?(:twitter_id => hash[:id])
       if hash[:text] =~ WATCH_EXPRESSION

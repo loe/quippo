@@ -7,9 +7,9 @@ class SanitizerTest < ActiveSupport::TestCase
       @string   = "@quippo @other I have a qp awesome quip for you @quippopotamus #other #qp #other2 #quippo"
     end
 
-    should "remove hashtags and @replies for search terms only" do
+    should "remove hashtags for search terms only" do
       output = Quippo::Sanitizer.sanitize_terms(@string, *@terms)
-      assert_equal output, "@other I have a qp awesome quip for you @quippopotamus #other #other2"
+      assert_equal output, "@quippo @other I have a qp awesome quip for you @quippopotamus #other #other2"
     end
   end
   
