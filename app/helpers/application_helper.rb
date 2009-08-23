@@ -9,7 +9,7 @@ module ApplicationHelper
     elsif user == current_user
       "your"
     else
-      "#{user.twitter_screen_name}'s"
+      link_to "#{user.twitter_screen_name}'s", "http://twitter.com/#{user.twitter_screen_name}"
     end
   end
   
@@ -44,4 +44,21 @@ module ApplicationHelper
       </object>
     EOF
   end
+  
+  def quip_citation(quip)
+    if quip.attribution.blank?
+      out = <<-EOF
+        <cite>#{link_to(quip.user.display_name, user_quips_url(quip.user))}</cite>
+      EOF
+    else
+      out = <<-EOF
+        <cite>#{quip.attribution}</cite> <span class="author">via #{link_to(quip.user.display_name, user_quips_url(quip.user))}</span>
+      EOF
+    end
+  end
+  
+=begin
+  <cite><%= link_to((q.user.twitter_name.nil? ? q.user.twitter_screen_name : q.user.twitter_name), "http://twitter.com/#{q.user.twitter_screen_name}") %></cite>
+  <em><%= link_to("#{time_ago_in_words(q.created_at)} ago", "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em>
+=end
 end

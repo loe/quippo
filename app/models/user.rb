@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   def to_param
     twitter_screen_name
   end
+  
+  def display_name
+    twitter_name || twitter_screen_name
+  end
 end
