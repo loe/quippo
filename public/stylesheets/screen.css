@@ -99,7 +99,6 @@ body {
 
 #content {
   float: right;
-  height: 1200px;
   margin-top: 200px;
   position: relative;
 }
@@ -113,14 +112,14 @@ body {
 
 #quips li {
   margin: 0 0 10px 0;
-  padding: 20px;
+  padding: 17px;
+  border: 3px solid transparent;
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
 
 #quips li:hover {
   background-color: rgba(0, 0, 0, .05);
-  padding: 17px;
-  border: 3px solid rgba(0, 0, 0, .5);
-  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+  border-color: rgba(0, 0, 0, .5);
 }
 
 #quips q {
