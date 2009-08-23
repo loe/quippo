@@ -111,16 +111,26 @@ h2 {
   -webkit-border-radius: 5px;
 }
 
-#nav li a:hover {
+#nav li a:hover, #nav li.selected a:hover {
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
 
+#nav li.selected a {
+  background-color: rgba(0, 0, 0, .25);
+  color: #fff;
+}
+
 #nav li a#login {
-  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat;
+  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat 25px center;
   line-height: 40px;
   text-transform: none;
   color: #33ccff;
+}
+
+#nav li a#login:hover {
+  background-color: #3cf;
+  color: #fff;
 }
 
 #nav li a#logout {
