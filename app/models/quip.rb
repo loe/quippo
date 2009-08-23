@@ -26,4 +26,15 @@ class Quip < ActiveRecord::Base
   def filter_attributions!
     
   end
+  
+  private
+  
+  # Extract all hashtags from the text and return them in an array.
+  def extract_hashtags!
+    regex = /#\w+(\s+|\b)/
+    tags  = text.scan regex
+    
+    text.gsub!(regex, '')
+    tags
+  end
 end
