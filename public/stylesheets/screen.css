@@ -216,10 +216,6 @@ body {
   text-indent: -10000px;
 }
 
-/*#badges img {
-  border: 1px solid rgba(0, 0, 0, .2);
-}*/
-
 #badges #jquery {
   height: 15px;
   width: 70px;
@@ -231,11 +227,3 @@ body {
   width: 86px;
   background-image: url('/images/prototype_badge.png');
 }
-
-/*#badges #jquery {
-  background-image: url('/images/icons/jquery.png');
-}
-
-#badges #prototype {
-  background-image: url('/images/icons/prototype.png');
-}*/
