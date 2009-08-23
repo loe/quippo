@@ -209,21 +209,28 @@ body {
   overflow: hidden;
 }
 
+#badges span {
+  font-style: normal;
+  font-size: 12px;
+}
+
 #badges .button {
   background: transparent center no-repeat;
   border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
   display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
   text-indent: -10000px;
 }
 
 #badges #jquery {
+  background-image: url('/images/jquery_badge.png');
   height: 15px;
   width: 70px;
-  background-image: url('/images/jquery_badge.png');
 }
 
 #badges #prototype {
+  background-image: url('/images/prototype_badge.png');
   height: 15px;
   width: 86px;
-  background-image: url('/images/prototype_badge.png');
 }
