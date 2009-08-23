@@ -207,13 +207,15 @@ h2 {
 
 /* =FORMS */
 
-input {
-  line-height: 18px;
+input, textarea, select {
+  font: inherit;
+}
+
+input, textarea {
   border-top: 1px solid rgba(0, 0, 0, .5);
   border-right: 1px solid rgba(0, 0, 0, .25);
   border-bottom: 1px solid rgba(0, 0, 0, .25);
   border-left: 1px solid rgba(0, 0, 0, .5);
-  font: inherit;
 }
 
 /* =EDITABLE */
