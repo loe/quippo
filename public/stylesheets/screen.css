@@ -65,10 +65,19 @@ body {
   margin-left: 200px;
 }
 
+/* =LISTING */
+
+#listing {
+  overflow: hidden;
+  position: relative;
+  background: #f0f0f0;
+}
+
 /* =BADGES */
 
 #badges {
   position: absolute;
+  top: 0;
   right: 0;
 }
 /* =HEADER */
@@ -167,17 +176,6 @@ body {
 
 #quips li .buttons {
   margin-bottom: 20px;
-}
-
-/* =SEARCH */
-
-#search {
-  overflow: hidden;
-  padding: 5px;
-}
-
-#search input {
-  width: 100%;
 }
 
 /* =FOOTER */

@@ -11,16 +11,6 @@
     <div id="sky">
       <%= render :partial => 'layouts/flashes' -%>
       <%= render :partial => 'layouts/search' %>
-      <div id="listing">
-        <div class="container_16">
-      <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
-
-        <div id="badges">
-          <%= link_to_remote 'jQuery Badge', :url => badge_info_url('jquery', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
-          <%= link_to_remote 'Prototype Badge', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
-        </div>
-        </div>
-      </div>
       <div id="clouds"></div>
     </div>
     <div class="container_16">
