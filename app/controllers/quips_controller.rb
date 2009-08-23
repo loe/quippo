@@ -4,7 +4,6 @@ class QuipsController < ApplicationController
   def index
     search_hash = {}
     search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q]
-    logger.debug search_hash.inspect
     
     @quips = (@user.try(:quips) || Quip).descending.search(search_hash.merge(:include => :user, :page => params[:page]))
     
