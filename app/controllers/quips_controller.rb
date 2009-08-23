@@ -2,15 +2,26 @@ class QuipsController < ApplicationController
   before_filter :get_user
   
   def index
-    if @user
-      @quips = @user.quips.paginate(:page => params[:page], :order => 'id DESC')
-    else
-      @quips = Quip.paginate(:include => :user, :page => params[:page], :order => 'id DESC')
-    end
+    @quips = (@user.try(:quips) || Quip).descending.paginate(:include => :user, :page => params[:page], :order => 'id DESC')
     
     respond_to do |wants|
       wants.html {  }
-      wants.js {  }
+			wants.js {  }
+      wants.json { render :json => @quips.to_json }
+    end
+  end
+  
+  def show
+    if params[:id] == 'random'
+      @quips = (@user.try(:quips) || Quip).random.first
+    else
+      @quips = (@user.try(:quips) || Quip).find(params[:id])
+    end
+    
+    respond_to do |wants|
+      wants.html { render :action => 'index' }
+      wants.json { render :json => @quips.to_json }
+    end
     end
   end
   

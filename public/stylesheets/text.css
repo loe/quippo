@@ -6,6 +6,7 @@ HIERARCHY:
   =LISTS
   =SKY
   =NAV
+  =CONTENT
 */
 
 /* =BASE */
@@ -27,11 +28,16 @@ hr {
 /* =LINKS */
 
 a:link, a:visited {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px dotted rgba(0, 0, 0, .2);
+  color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease;
 }
 
 a:hover, a:active {
+  color: rgba(0, 0, 0, 1.0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /* =HEADINGS */
@@ -110,16 +116,26 @@ h2 {
   -webkit-border-radius: 5px;
 }
 
-#nav li a:hover {
+#nav li a:hover, #nav li.selected a:hover {
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
 
+#nav li.selected a {
+  background-color: rgba(0, 0, 0, .125);
+  color: #fff;
+}
+
 #nav li a#login {
-  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat;
+  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat 25px center;
   line-height: 40px;
   text-transform: none;
   color: #33ccff;
+}
+
+#nav li a#login:hover {
+  background-color: #3cf;
+  color: #fff;
 }
 
 #nav li a#logout {
@@ -128,8 +144,24 @@ h2 {
   height: 40px;
   margin: 20px auto;
   text-indent: -10000px;
+  -webkit-transition: none; /* this doesn't look so great with the transition turned on ... */
 }
 
 #nav li a#logout:hover {
   background-position: 0 -40px;
+}
+
+/* =CONTENT */
+#content h3 {
+  border-bottom: 1px solid rgba(0,0,0,.25);
+  color: rgba(0, 0, 0, .5);
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#content h3 span {
+  color: rgba(0, 0, 0, .9);
+  font-weight: bold;
 }
