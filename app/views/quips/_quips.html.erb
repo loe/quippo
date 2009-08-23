@@ -1,0 +1,6 @@
+<%- @quips.each do |q| -%>
+  <li>
+    <q>&ldquo;<%= q.text %>&rdquo;</q>
+    <cite><%= q.user.twitter_name %> (<%= link_to(q.user.twitter_screen_name, "http://twitter.com/#{q.user.twitter_screen_name}") %>)</cite> <em>at <%= link_to(q.created_at, "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em>
+  </li>
+<%- end -%>

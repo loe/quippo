@@ -1,0 +1,3 @@
+page.insert_html(:bottom, :quips, :partial => 'quips')
+count = @quips.size + @quips.previous_page * @quips.per_page
+page.replace_html(:quip_count, pluralize(count, 'quip'))

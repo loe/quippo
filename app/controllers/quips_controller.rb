@@ -3,14 +3,14 @@ class QuipsController < ApplicationController
   
   def index
     if @user
-      @quips = @user.quips.all(:order => 'id DESC').paginate
+      @quips = @user.quips.paginate(:page => params[:page], :order => 'id DESC')
     else
-      @quips = Quip.all(:include => :user, :order => 'id DESC').paginate
+      @quips = Quip.paginate(:include => :user, :page => params[:page], :order => 'id DESC')
     end
     
     respond_to do |wants|
-      flash.now[:notice] = "oh hi there"
       wants.html {  }
+      wants.js {  }
     end
   end
   
