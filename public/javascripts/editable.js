@@ -43,12 +43,16 @@ var Editable = Class.create({
     this.editForm = new Element('form', { 'action': this.element.readAttribute('rel'), 'style':'display:none', 'class':'editor' });
     this.editInput = new Element(this.editFieldTag, { 'name':this.field, 'id':('edit_' + this.element.identify()) });
     this.editInput.value = this.element.innerHTML;
-    var saveInput = new Element('input', { 'type':'submit', 'value':'Save' });
-    this.cancelLink = new Element('a', { 'href':'#' }); this.cancelLink.update('Cancel');
+    var saveInput = new Element('input', { 'class':'save button', 'type':'submit', 'value':'Save' });
+    this.cancelLink = new Element('a', { 'href':'#', 'class':'edit button' });
+    this.cancelLink.update('Cancel');
+    var buttons = new Element('div', { 'class':'buttons' });
+    buttons.update(saveInput);
+    buttons.insert(this.cancelLink);
     var methodInput = new Element('input', { 'type':'hidden', 'value':'put', 'name':'_method' });
+    
     this.editForm.insert(this.editInput);
-    this.editForm.insert(saveInput);
-    this.editForm.insert(this.cancelLink);
+    this.editForm.insert(buttons);
     this.editForm.insert(methodInput);
     this.element.insert({after: this.editForm });
   },
