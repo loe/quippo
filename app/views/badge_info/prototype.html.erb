@@ -4,7 +4,7 @@
   <hr />
   <p>In the &lt;head&gt; element <%= clippy render :partial => 'prototype_code' %></p>
   <code>
-    <%= render :partial => 'prototype_code' %>
+    <%= (render :partial => 'prototype_code').nl2br %>
   </code>
 
   <hr />
