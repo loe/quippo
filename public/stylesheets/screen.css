@@ -146,7 +146,29 @@ body {
 /* =SEARCH */
 
 #search {
-/*  padding: 3px;*/
+  background-color: rgba(0, 0, 0, .2);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+#search input {
+  border: 0 none;
+  float: left;
+  font-size: 18px;
+  margin-right: 10px;
+  /*opacity: .75;*/
+  padding: 5px;
+  width: 85%;
+}
+
+#search input:focus {
+/*  opacity: 1;*/
 }
 
 /* =FOOTER */

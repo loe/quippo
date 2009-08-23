@@ -3,7 +3,7 @@
   <%- form_tag request.url, :id => 'search', :method => 'get' do -%>
     <%= text_field_tag :q, params[:q] %>
     <%= link_to "Search", "#", :onclick => "$('search').submit(); return nil;", :class => 'search button' %>
-    <%= link_to "Clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;", :class => 'cancel button' %>
+    <%#= link_to "Clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;", :class => 'cancel button' %>
   <%- end -%>
   </div>
 </div>
