@@ -10,5 +10,5 @@
 </ol>
 
 <% content_for :javascript do %>
-  <%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, $('quips'), '#{url_for({:controller => 'quips', :format => :js, :q => params[:q]})}', '#{form_authenticity_token}');" %>
+  <%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, $('quips'), '#{quips_path(:format => :js, :q => params[:q])}', '#{form_authenticity_token}');" %>
 <% end %>
