@@ -28,7 +28,7 @@ body {
 }
 
 #sky #flash {
-  background: #fff;
+  background: #f0f0f0;
   text-align: center;
 }
 
@@ -79,6 +79,7 @@ body {
 #badges a {
   background: rgba(0, 0, 0, .25)
 }
+
 /* =HEADER */
 
 #header {
