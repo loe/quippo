@@ -1,0 +1,54 @@
+<%= File.read "#{RAILS_ROOT}/public/javascripts/jsonp.js" %>
+
+<%= render :partial => 'badge_setup' %>
+
+var QuippoBadge = Class.create();
+Object.extend(QuippoBadge.prototype);
+
+QuippoBadge.prototype = {
+  initialize: function(url, hideAuthor) {
+    this.url = url;
+    this.container = $('quip_container');
+    this.hideAuthor = hideAuthor;
+  },
+  
+  buildQuip: function (quip) {
+    var quipString = "";
+    
+    quipString += "<ul id=\"quip_list\">";
+    quipString +=   "<li class=\"quip\">";
+    quipString +=     "<q>" + quip.text + "</q>";
+    
+    if (!this.hideAuthor) {
+      quipString +=   "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+    };
+    
+    quipString +=   "</li>";
+    quipString += "</ul>";
+    
+    this.container.insert(quipString);
+  },
+  
+  display: function (url) {
+    this_proxy = this;
+    
+    new Ajax.JSONRequest(this.url, {
+      onSuccess: function(response) {
+        response.responseJSON.each(function (object){
+          this.buildQuip(object.quip);
+        }.bind(this_proxy));
+      },
+      onFailure: function(response) {
+        console.log("1: fail", response, response.responseJSON);
+      },
+      onComplete: function(response) {
+        console.log("1: complete", response, response.responseJSON);
+      }
+    });
+  }
+};
+
+document.observe("dom:loaded", function () {  
+  badge = new QuippoBadge(quippoUrl, quippoHideAuthor);
+  badge.display();
+});

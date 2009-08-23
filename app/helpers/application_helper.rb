@@ -9,7 +9,11 @@ module ApplicationHelper
     elsif user.nil?
       "the public"
     else
-      "#{user.screen_name}'s"
+      "#{user.twitter_screen_name}'s"
     end
+  end
+  
+  def class_if(condition, *class_names)
+    "class=\"#{class_names.join(' ')}\"" if condition
   end
 end

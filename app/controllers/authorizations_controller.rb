@@ -34,21 +34,21 @@ class AuthorizationsController < ApplicationController
       # Store the user id in the session
       session[:user_id] = @user.id
       
-      flash[:notice] = "Welcome, #{@user.twitter_screen_name}!"
+      flash[:notice] = "You were successfully logged in as #{@user.twitter_screen_name}!"
     else
       # Oh no something bad happened :(
       flash[:error] = "We were unable to log you in. Sorry!"
     end
     
     respond_to do |wants|
-      wants.html { redirect_to user_quips_url(@user) }
+      wants.html { redirect_to user_quips_path(@user) }
     end
   end
   
   def destroy
     session[:user_id] = nil
     respond_to do |wants|
-      wants.html { redirect_to quips_url }
+      wants.html { redirect_to quips_path }
     end
   end
   
@@ -59,7 +59,7 @@ class AuthorizationsController < ApplicationController
   end
   
   def verify_oauth
-    redirect_to quips_url and return false unless params[:oauth_token] && 
+    redirect_to quips_path unless params[:oauth_token] && 
       session[:twitter_request_token] && 
       @request_token = unfreeze_request_token
   end

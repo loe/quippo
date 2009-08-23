@@ -1,2 +1,16 @@
-<%= javascript_include_tag :defaults, 'jsonp', 'endless_pages', :cache => true %>
+<%= javascript_include_tag :defaults, 'application', 'jsonp', 'endless_pages', 'editable', 'jquery-1.3.2.min.js', 'facebox', :cache => true %>
+
+<script type="text/javascript" charset="utf-8">
+  var $j = jQuery.noConflict();
+  
+  document.observe('dom:loaded', function() {
+    flash = $('flash');
+    sky   = $('sky');
+    
+    move_offset = flash.getHeight();
+    
+    new Effect.Move(sky, {mode: 'relative', x: 0, y: -move_offset, duration: 1.3});
+  }.delay(4));
+</script>
+
 <%= yield :javascript %>
