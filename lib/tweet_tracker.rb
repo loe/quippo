@@ -13,7 +13,11 @@ class TweetTracker
       if block_given?
         yield hash, query
       else
-        add_quip(hash, query)
+        if hash.has_key?(:delete)
+          delete_quip(hash, query)
+        else
+          add_quip(hash, query)
+        end
       end
     end
   end
@@ -26,6 +30,12 @@ class TweetTracker
         RAILS_DEFAULT_LOGGER.debug "adding quip #{hash[:id]} from user #{hash[:user][:id]}"
         user.quips.create(:twitter_id => hash[:id], :text => Quippo::Sanitizer.sanitize_terms(hash[:text], *query))
       end
+    end
+  end
+  
+  def delete_quip(hash, query)
+    if q = Quip.find_by_twitter_id(hash[:delete][:status][:id])
+      q.destroy
     end
   end
 end
