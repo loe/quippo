@@ -1,9 +1,3 @@
-<%- form_tag request.url, :id => 'search', :method => 'get' do -%>
-  <%= text_field_tag :q, params[:q] %>
-  <%= link_to "Search", "#", :onclick => "$('search').submit(); return nil;", :class => 'search' %>
-  <%= link_to "clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;", :class => 'cancel' %>
-<%- end -%>
-
 <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
 
 <div id="badges">
