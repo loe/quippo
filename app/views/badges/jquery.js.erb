@@ -1,0 +1,32 @@
+var QuippoBadge = new Object({
+  container: '#quip_container',
+  url: quippoUrl
+});
+
+QuippoBadge.display = function (url) {
+  $.getJSON(url, function (data) {
+    $.each(data, function (index, d) {
+      QuippoBadge.buildQuip(d.quip);
+    });
+  });
+};
+
+QuippoBadge.buildQuip = function (quip) {
+  console.log("building quip:");
+  console.log(quip);
+  
+  var quipString = "";
+  
+  quipString += "<ul id=\"quip_list\">";
+  quipString +=   "<li class=\"quip\">";
+  quipString +=     "<q>" + quip.text + "</q>";
+  quipString +=     "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+  quipString +=   "</li>";
+  quipString += "</ul>";
+  
+  $(quipString).appendTo(this.container);
+};
+
+$(document).ready(function () {
+  QuippoBadge.display(QuippoBadge.url);
+});

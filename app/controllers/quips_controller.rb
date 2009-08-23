@@ -7,7 +7,7 @@ class QuipsController < ApplicationController
     respond_to do |wants|
       wants.html {  }
       wants.js {  }
-      wants.json { render :json => @quips.to_json }
+      wants.json { render :json => @quips.to_json(:include => :user) }
     end
   end
   
@@ -20,7 +20,7 @@ class QuipsController < ApplicationController
     
     respond_to do |wants|
       wants.html { render :action => 'index' }
-      wants.json { render :json => @quips.to_json }
+      wants.json { render :json => @quips.to_json(:include => :user) }
     end
   end
   
