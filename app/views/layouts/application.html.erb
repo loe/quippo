@@ -5,7 +5,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>quippo</title>
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <%= stylesheet_link_tag 'reset', '960', 'screen', 'text', :media => 'all', :cache => true %>
+    <%= stylesheet_link_tag 'reset', '960', 'screen', 'text', 'facebox', :media => 'all', :cache => true %>
   </head>
   <body class="<%= body_class %>">
     <div id="sky">
@@ -21,9 +21,8 @@
             <%= link_to image_tag(current_user.twitter_profile_image_url, :size => '48x48', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
             <h2><%= current_user.twitter_screen_name %></h2>
             <ul>
-              <li <%= "class=\"selected\"" if @user == current_user %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
-              <li <%= "class=\"selected\"" unless @user %>><%= link_to 'All Quips', root_url %></li>
-              <li><%= link_to 'Settings', '#' %></li>
+              <li <%= class_if(@user == current_user, 'selected') %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
+              <li <%= class_if(!@user, 'selected') %>><%= link_to 'All Quips', root_url %></li>
               <li><%= link_to 'Logout', logout_url, :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
             </ul>
           <%- else -%>

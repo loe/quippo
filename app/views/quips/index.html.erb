@@ -2,6 +2,7 @@
 
 <div id="badges">
   <%= url_for(:id => 'random', :format => 'json', :q => params[:q], :action => 'show', :callback => '10101', :controller => 'quips', :user_id => @user, :only_path => false).gsub(/10101/, '?') %>
+  <%= link_to_remote 'click me!', :url => badge_info_url('jquery', :format => 'js'), :method => 'get' %>
 </div>
 
 <ol id="quips">
