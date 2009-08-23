@@ -24,6 +24,7 @@ hr {
   clear: both;
   height: 0;
   border-top: 1px solid #000;
+  border-bottom: 0;
 }
 
 /* =LINKS */
@@ -92,6 +93,15 @@ li {
   background: url("/images/icons/tick.png") no-repeat;
   padding-left: 20px;
   color: #090;
+}
+
+/* =SEARCH */
+
+#in_the_sky p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(0, 0, 0, .75);
 }
 
 /* =NAV */

@@ -6,12 +6,9 @@ HIERARCHY:
   =NAV
   =CONTENT
   =QUIPS
-  =SEARCH
   =FOOTER
-  =FORMS
   =EDITABLE
-  =BADGE_INFO
-  
+  =BADGES
 */
 
 /* =BASE */
@@ -44,15 +41,49 @@ body {
 }
 
 #sky #clouds {
-  height: 300px;
+  height: 180px;
   background: url("/images/bg_clouds.png") repeat-x bottom center;
+}
+
+/* =SEARCH */
+
+#in_the_sky {
+  overflow: hidden;
+  background: #fff url("/images/bg_in_the_sky.png") repeat-x top center;
+  padding-top: 20px;
+}
+
+#in_the_sky input {
+  width: 100%;
+}
+
+#in_the_sky .button {
+  width: 100px;
+}
+
+/* =LISTING */
+
+#listing {
+  overflow: hidden;
+  position: relative;
+}
+
+/* =BADGES */
+
+#badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#badges a {
+  background: rgba(0, 0, 0, .25)
 }
 
 /* =HEADER */
 
 #header {
   position: fixed;
-/*  background: rgba(0, 0, 0, .05);*/
   height: 100%;
   z-index: 9999;
 }
@@ -147,12 +178,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* =SEARCH */
-
-#search input {
-  width: 100%;
-}
-
 /* =FOOTER */
 
 #footer {
@@ -164,10 +189,6 @@ body {
   z-index: 10000;
 }
 
-/* =FORMS */
-
-
-
 /* =EDITABLE */
 
 .editor #edit_quip_text {
@@ -178,7 +199,7 @@ body {
   font-size: 12px;
 }
 
-/* =BADGE_INFO */
+/* =BADGES */
 
 .badge_info code {
   font-size: 14px;
