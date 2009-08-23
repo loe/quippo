@@ -8,6 +8,7 @@ HIERARCHY:
   =QUIPS
   =SEARCH
   =FOOTER
+  =BUTTONS
 */
 
 /* =BASE */
@@ -99,7 +100,6 @@ body {
 
 #content {
   float: right;
-  height: 1200px;
   margin-top: 200px;
   position: relative;
 }
@@ -113,18 +113,26 @@ body {
 
 #quips li {
   margin: 0 0 10px 0;
-  padding: 20px;
-}
-
-#quips li:hover {
-  background-color: rgba(0, 0, 0, .05);
   padding: 17px;
-  border: 3px solid rgba(0, 0, 0, .5);
+  border: 3px solid transparent;
   border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
 
-#quips q {
-  display: block;
+#quips li.mine {
+  border-color: rgba(0, 0, 0, .05);
+}
+
+#quips li.mine:hover {
+  background-color: rgba(0, 0, 0, .05);
+  border-color: rgba(0, 0, 0, .5);
+}
+
+#quips li.mine .edit {
+  visibility: hidden;
+}
+
+#quips li.mine:hover .edit {
+  visibility: visible;
 }
 
 /* =SEARCH */
@@ -154,4 +162,32 @@ body {
   background: url("/images/grass.png") repeat-x;
   width: 100%;
   height: 60px;
+}
+
+/* =EDITABLE */
+
+.editable:hover {
+  background-color: rgba(255, 255, 0, .5);
+  border: 1px dashed rgba(0, 0, 0, .25);
+}
+
+/* =BUTTONS */
+
+.button:link, .button:visited {
+  background-color: rgba(0, 0, 0, .25);
+  padding: 5px 10px;
+  border: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  vertical-align: text-top;
+  color: #fff;
+  border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
+  
+}
+
+.button:hover, .button:active {
+  background-color: rgba(0, 0, 0, .5);
 }
