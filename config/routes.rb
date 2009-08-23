@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => [:quips]
   
   map.resources :authorizations
+  
+  map.resources :badges
 
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
