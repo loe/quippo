@@ -34,6 +34,6 @@ class QuipsController < ApplicationController
   
   def prepare_search
     @search_hash = {}
-    @search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q]
+    @search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q].present?
   end
 end

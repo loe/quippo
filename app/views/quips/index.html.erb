@@ -1,13 +1,15 @@
-<%- form_tag request.url, :method => 'get' do -%>
+<%- form_tag request.url, :id => 'search', :method => 'get' do -%>
   <%= text_field_tag :q, params[:q] %>
-  <%= submit_tag %>
+  <%= link_to "Search", "#", :onclick => "$('search').submit(); return nil;" %>
+  <%= link_to "clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;" %>
 <%- end -%>
 
 <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
 
 <ol id="quips">
-<%= render :partial => 'quips' %>
+  <%= render :partial => 'quips' %>
 </ol>
+
 <% content_for :javascript do %>
-<%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, '#{quips_path(:format => :js)}', '#{form_authenticity_token}');" %>
+  <%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, '#{quips_path(:format => :js)}', '#{form_authenticity_token}');" %>
 <% end %>
