@@ -9,7 +9,7 @@ module ApplicationHelper
     elsif user.nil?
       "the public"
     else
-      "#{user.screen_name}'s"
+      "#{user.twitter_screen_name}'s"
     end
   end
   
