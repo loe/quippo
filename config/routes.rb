@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :authorizations
   
   map.resources :badges
+  map.resources :badge_info, :singular => 'badge_info'
 
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
