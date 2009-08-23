@@ -12,7 +12,7 @@ HIERARCHY:
 /* =BASE */
 
 body {
-  background: #4baae1;
+  background: #4baae1 url('/images/bg_sky.png') repeat-x fixed bottom left;
 }
 
 /* =SKY */
