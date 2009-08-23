@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :quips
+  has_many :quips, :dependent => :destroy
   
   validates_presence_of :twitter_atoken, :twitter_asecret
   
