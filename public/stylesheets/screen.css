@@ -8,6 +8,7 @@ HIERARCHY:
   =QUIPS
   =SEARCH
   =FOOTER
+  =BUTTONS
 */
 
 /* =BASE */
@@ -126,6 +127,14 @@ body {
   border-color: rgba(0, 0, 0, .5);
 }
 
+#quips li.mine .edit {
+  visibility: hidden;
+}
+
+#quips li.mine:hover .edit {
+  visibility: visible;
+}
+
 /* =SEARCH */
 
 #search {
@@ -153,4 +162,32 @@ body {
   background: url("/images/grass.png") repeat-x;
   width: 100%;
   height: 60px;
+}
+
+/* =EDITABLE */
+
+.editable:hover {
+  background-color: rgba(255, 255, 0, .5);
+  border: 1px dashed rgba(0, 0, 0, .25);
+}
+
+/* =BUTTONS */
+
+.button:link, .button:visited {
+  background-color: rgba(0, 0, 0, .25);
+  padding: 5px 10px;
+  border: 0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  vertical-align: text-top;
+  color: #fff;
+  border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+  text-shadow: 0 -1px rgba(0, 0, 0, .5);
+  
+}
+
+.button:hover, .button:active {
+  background-color: rgba(0, 0, 0, .5);
 }
