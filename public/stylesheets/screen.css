@@ -8,7 +8,8 @@ HIERARCHY:
   =QUIPS
   =SEARCH
   =FOOTER
-  =BUTTONS
+  =FORMS
+  =EDITABLE
 */
 
 /* =BASE */
@@ -128,31 +129,14 @@ body {
   border-color: rgba(0, 0, 0, .5);
 }
 
-#quips li.mine .edit {
-  visibility: hidden;
-}
-
-#quips li.mine:hover .edit {
-  visibility: visible;
+#quips li q {
+  display: block;
 }
 
 /* =SEARCH */
 
 #search {
-  background-color: rgba(0, 0, 0, .2);
-  border-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  overflow: hidden;
-  padding: 10px;
-}
-
-#search input {
-  font-size: 18px;
-  padding: 5px;
-  width: 95%;
+/*  padding: 3px;*/
 }
 
 /* =FOOTER */
@@ -166,30 +150,16 @@ body {
   z-index: 10000;
 }
 
+/* =FORMS */
+
+
+
 /* =EDITABLE */
 
-.editable:hover {
-  background-color: rgba(255, 255, 0, .5);
-  border: 1px dashed rgba(0, 0, 0, .25);
+.editor #edit_quip_text {
+  width: 100%;
 }
 
-/* =BUTTONS */
-
-.button:link, .button:visited {
-  background-color: rgba(0, 0, 0, .25);
-  padding: 5px 10px;
-  border: 0;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  vertical-align: text-top;
-  color: #fff;
-  border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-  text-shadow: 0 -1px rgba(0, 0, 0, .5);
-  
-}
-
-.button:hover, .button:active {
-  background-color: rgba(0, 0, 0, .5);
+.editor input[type=submit] {
+  font-size: 12px;
 }
