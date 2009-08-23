@@ -204,3 +204,33 @@ body {
 .badge_info code {
   font-size: 14px;
 }
+
+#badges {
+  overflow: hidden;
+}
+
+#badges .button {
+  /*background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;*/
+  /*float: left;*/
+  /*height: 16px;
+    width: 16px;
+    padding: 1px;
+    margin-top: 3px;
+    margin-left: 5px;*/
+  /*padding-left: 23px;*/
+  /*text-indent: -10000px;*/
+}
+
+#badges img {
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+/*#badges #jquery {
+  background-image: url('/images/icons/jquery.png');
+}
+
+#badges #prototype {
+  background-image: url('/images/icons/prototype.png');
+}*/
