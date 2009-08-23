@@ -7,5 +7,5 @@ public/system
 coverage/*
 *.swp
 config/twitter_api.yml
-
+tracker.log
 !.keep
