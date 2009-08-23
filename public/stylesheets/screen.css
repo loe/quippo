@@ -112,8 +112,9 @@ body {
 /* =QUIPS */
 
 #quips {
-  list-style-type: none;
   color: rgba(0, 0, 0, .75);
+  list-style-type: none;
+  margin-bottom: 60px;
 }
 
 #quips li {
