@@ -129,6 +129,10 @@ body {
   border-color: rgba(0, 0, 0, .5);
 }
 
+#quips li.editing {
+  border-style: dashed;
+}
+
 #quips li q {
   display: block;
 }

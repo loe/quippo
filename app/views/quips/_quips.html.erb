@@ -1,7 +1,6 @@
 <%- @quips.each do |q| -%>
   <li <%= class_if(q.user == current_user, 'mine') %>>
     <q <%= "class=\"editable\"" if q.user == current_user %> model="quip" id="quip_text" rel="<%= quip_url q, :format => 'js', :authenticity_token => form_authenticity_token %>"><%= q.text %></q>
-    <!-- <div class="buttons"><%# link_to 'Save', '#', :id => 'save', :class => 'positive button' %> or <%# link_to 'Cancel', '#', :id => 'cancel', :class => 'passive button' %></div> -->
     <div><cite><%= link_to((q.user.twitter_name.nil? ? q.user.twitter_screen_name : q.user.twitter_name), "http://twitter.com/#{q.user.twitter_screen_name}") %></cite> <em>at <%= link_to(q.created_at, "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em></div>
   </li>
 <%- end -%>

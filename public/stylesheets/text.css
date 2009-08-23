@@ -176,6 +176,7 @@ h2 {
 }
 
 #quips #edit_quip_text {
+  background-color: rgba(255, 255, 204, 1);
   font-style: italic;
 }
 
