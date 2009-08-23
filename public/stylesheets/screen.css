@@ -117,13 +117,13 @@ body {
   border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
 
-#quips li:hover {
-  background-color: rgba(0, 0, 0, .05);
-  border-color: rgba(0, 0, 0, .5);
+#quips li.mine {
+  border-color: rgba(0, 0, 0, .05);
 }
 
-#quips q {
-  display: block;
+#quips li.mine:hover {
+  background-color: rgba(0, 0, 0, .05);
+  border-color: rgba(0, 0, 0, .5);
 }
 
 /* =SEARCH */
