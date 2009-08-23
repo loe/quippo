@@ -1,3 +1,8 @@
+<%- form_tag request.url, :method => 'get' do -%>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag %>
+<%- end -%>
+
 <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
 
 <ol id="quips">
