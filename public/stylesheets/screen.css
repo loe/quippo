@@ -1,14 +1,27 @@
 /*
 HIERARCHY:
+  =GRID OVERRIDE
   =BASE
   =SKY
   =HEADER
   =NAV
   =CONTENT
   =QUIPS
+  =SEARCH
   =FOOTER
 */
 
+/* =GRID OVERRIDE */
+/*  Grid is inactive when entire section is commented */
+/*
+body {
+  background: #fff url("/images/16_col.png") center top repeat-y !important;
+}
+
+#sky, #sky #flash {
+  background: none !important;
+}
+*/
 /* =BASE */
 
 body {
@@ -94,8 +107,9 @@ body {
 
 #content {
   float: right;
-  margin-top: 200px;
   height: 1200px;
+  margin-top: 200px;
+  position: relative;
 }
 
 /* =QUIPS */
@@ -137,6 +151,24 @@ body {
 
 #quips em {
   color: rgba(0, 0, 0, .25);
+}
+
+/* =SEARCH */
+#search {
+  background-color: rgba(0, 0, 0, .25);
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 680px;
+  z-index: 10001;
+}
+
+#search input {
+  font-size: 18px;
+  padding: 5px;
+  width: 80%;
 }
 
 /* =FOOTER */
