@@ -5,7 +5,7 @@ class QuipsController < ApplicationController
     if @user
       @quips = @user.quips.all(:order => 'id DESC').paginate
     else
-      @quips = Quip.all(:order => 'id DESC').paginate
+      @quips = Quip.all(:include => :user, :order => 'id DESC').paginate
     end
     
     respond_to do |wants|

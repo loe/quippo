@@ -1,5 +1,3 @@
-`ssh-add`
-
 # For migrations
 set :rails_env, 'production'
 
@@ -30,18 +28,18 @@ namespace :deploy do
 
   desc "Start the Tracker"
   task :start do
-    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker start")
+    send(run_method, "/usr/bin/env RAILS_ENV=#{rails_env} #{deploy_to}/#{current_dir}/script/tracker start")
   end
   
   desc "Stop the Tracker"
   task :stop do
-    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker stop")
+    send(run_method, "/usr/bin/env RAILS_ENV=#{rails_env} #{deploy_to}/#{current_dir}/script/tracker stop")
   end
 
   desc "Restart Rails & Tracker"
   task :restart do
     send(run_method, "cd #{deploy_to}/#{current_dir} && touch tmp/restart.txt")
-    send(run_method, "cd #{deploy_to}/#{current_dir} && RAILS_ENV=#{rails_env} script/tracker restart")
+    send(run_method, "/usr/bin/env RAILS_ENV=#{rails_env} #{deploy_to}/#{current_dir}/script/tracker restart")
   end
   
   desc "Run this after every successful deployment" 
