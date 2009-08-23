@@ -153,6 +153,7 @@ body {
 #quips li {
   margin: 0 0 10px 0;
   padding: 17px;
+  position: relative;
   border: 3px solid transparent;
   border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
 }
@@ -201,8 +202,8 @@ body {
 
 .editing .delete_buttons {
   position: absolute;
-  top: 82px;
-  right: 20px;
+    bottom: 42px;
+    right: 20px;
 }
 
 .editing .buttons .delete {
