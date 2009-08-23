@@ -95,6 +95,15 @@ li {
   color: #090;
 }
 
+/* =SEARCH */
+
+#in_the_sky p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(0, 0, 0, .75);
+}
+
 /* =NAV */
 
 h2 {

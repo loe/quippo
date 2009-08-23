@@ -28,7 +28,7 @@ body {
 }
 
 #sky #flash {
-  background: #f0f0f0;
+  background: #fff;
   text-align: center;
 }
 
@@ -41,28 +41,24 @@ body {
 }
 
 #sky #clouds {
-  height: 200px;
+  height: 180px;
   background: url("/images/bg_clouds.png") repeat-x bottom center;
 }
 
 /* =SEARCH */
 
-#search {
+#in_the_sky {
   overflow: hidden;
-  background: #f0f0f0;
-  padding: 10px 0;
+  background: #fff url("/images/bg_in_the_sky.png") repeat-x top center;
+  padding-top: 20px;
 }
 
-#search input {
+#in_the_sky input {
   width: 100%;
 }
 
-#search .button {
+#in_the_sky .button {
   width: 100px;
-}
-
-#search hr {
-  margin-left: 200px;
 }
 
 /* =LISTING */
@@ -70,7 +66,6 @@ body {
 #listing {
   overflow: hidden;
   position: relative;
-  background: #f0f0f0;
 }
 
 /* =BADGES */
@@ -79,6 +74,10 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+#badges a {
+  background: rgba(0, 0, 0, .25)
 }
 /* =HEADER */
 
