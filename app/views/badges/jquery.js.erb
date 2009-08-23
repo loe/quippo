@@ -22,7 +22,11 @@ QuippoBadge.buildQuip = function (quip) {
   quipString +=     "<q>" + quip.text + "</q>";
   
   if (!this.hideAuthor) {
-    quipString +=     "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+    if (quip.attribution && quip.attribution.length > 0) {
+      quipString += "<cite>" + quip.attribution + "</cite>";
+    } else {
+      quipString += "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+    };
   };
   
   quipString +=   "</li>";
