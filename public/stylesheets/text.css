@@ -28,16 +28,15 @@ hr {
 /* =LINKS */
 
 a:link, a:visited {
-  border-bottom: 1px dotted rgba(0, 0, 0, .2);
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
   text-decoration: none;
+  color: rgba(0, 0, 0, .5);
   -webkit-transition: all 0.25s ease;
 }
 
 a:hover, a:active {
-  color: rgba(0, 0, 0, 1.0);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, .75);
+  color: rgba(0, 0, 0, .75);
 }
 
 /* =HEADINGS */
@@ -109,6 +108,7 @@ h2 {
   text-decoration: none;
   border: 0;
   font-size: 12px;
+  font-weight: bold;
   text-transform: uppercase;
   color: rgba(255, 255, 255, .75);
   border-radius: 5px;
@@ -116,13 +116,13 @@ h2 {
   -webkit-border-radius: 5px;
 }
 
-#nav li a:hover, #nav li.selected a:hover {
-  background-color: rgba(0, 0, 0, .5);
+#nav li a:hover {
+  background-color: rgba(0, 0, 0, .25);
   color: #fff;
 }
 
 #nav li.selected a {
-  background-color: rgba(0, 0, 0, .125);
+  background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
 
@@ -152,6 +152,7 @@ h2 {
 }
 
 /* =CONTENT */
+
 #content h3 {
   border-bottom: 1px solid rgba(0,0,0,.25);
   color: rgba(0, 0, 0, .5);
@@ -164,4 +165,35 @@ h2 {
 #content h3 span {
   color: rgba(0, 0, 0, .9);
   font-weight: bold;
+}
+
+/* =QUIPS */
+
+#quips q {
+  font-style: italic;
+}
+
+#quips cite, #quips em {
+  font-size: 14px;
+  font-style: normal;
+}
+
+#quips cite:before {
+  content: "~ ";
+}
+
+#quips cite {
+  color: rgba(0, 0, 0, .5);
+}
+
+#quips em {
+  color: rgba(0, 0, 0, .25);
+}
+
+#quips em a:link, #quips em a:visited {
+  color: inherit;
+}
+
+#quips em a:hover, #quips em a:active {
+  color: rgba(0, 0, 0, .75);
 }
