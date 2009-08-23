@@ -1,8 +1,8 @@
-<%= CGI.escapeHTML "<link href=\"#{request.protocol + request.host + "/stylesheets/badges.css"}\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />" %><br />
-&lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;<br />
-&lt;script&gt;google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);&lt;/script&gt;<br />
-&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;<br />
-&nbsp;&nbsp;var quippoUrl = &#x27;<%= @badge_url %>&#x27;;<br />
-&nbsp;&nbsp;var quippoHideAuthor = false;<br />
-&lt;/script&gt;<br>
+<%= CGI.escapeHTML "<link href=\"#{request.protocol + request.host + "/stylesheets/badges.css"}\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />" %>
+&lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;
+&lt;script&gt;google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+&nbsp;&nbsp;var quippoUrl = &#x27;<%= @badge_url %>&#x27;;
+&nbsp;&nbsp;var quippoHideAuthor = false;
+&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;<%= badge_url('jquery', :format => 'js', :only_path => false) %>&quot;&gt;&lt;/script&gt;

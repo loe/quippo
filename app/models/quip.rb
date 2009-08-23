@@ -24,7 +24,9 @@ class Quip < ActiveRecord::Base
   validates_presence_of :text
   
   def filter_attributions!
+    hashtags = extract_hashtags!
     
+    # Match '"I am a quote" - Attribution'
   end
   
   private
