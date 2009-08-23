@@ -5,6 +5,8 @@
       <%= quip_citation(q) %>
       <em><%= link_to("#{time_ago_in_words(q.created_at)} ago", "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em>
     </div>
-    <%= link_to('Delete', quip_path(q), :method => :delete, :class => 'delete', :style => 'display:none') if q.user == current_user %>
+    <div class="buttons delete_buttons">
+      <%= link_to('Delete', quip_path(q), :method => :delete, :class => 'delete button', :style => 'display:none') if q.user == current_user %>
+    </div>
   </li>
 <%- end -%>

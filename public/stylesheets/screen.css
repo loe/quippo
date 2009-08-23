@@ -199,6 +199,16 @@ body {
   font-size: 12px;
 }
 
+.editing .delete_buttons {
+  position: absolute;
+  top: 82px;
+  right: 20px;
+}
+
+.editing .buttons .delete {
+/*  padding: 4px 10px;*/
+}
+
 /* =BADGES */
 
 .badge_info code {
