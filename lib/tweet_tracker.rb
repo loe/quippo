@@ -1,7 +1,7 @@
 class TweetTracker
   require 'yajl/http_stream'
 
-  WATCH_EXPRESSION = /(\b|#)qp\b|quippo/
+  WATCH_EXPRESSION = /(#)(qp|quippo)/
 
   def track(*query, &block)
     query_string = URI.encode(query.join(","))
