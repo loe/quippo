@@ -18,7 +18,7 @@
         <h1>Quippopotamus</h1>
         <div id="nav">
           <%- if current_user -%>
-            <%= link_to image_tag(current_user.twitter_profile_image_url, :size => '48x48', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
+            <%= link_to image_tag(current_user.twitter_profile_image_url, :size => '48x48', :alt => 'Avatar'), "http://twitter.com/#{current_user.twitter_screen_name}", :id => 'avatar', :title => 'Profile' %>
             <h2><%= current_user.twitter_screen_name %></h2>
             <ul>
               <li <%= class_if(@user == current_user, 'selected') %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
