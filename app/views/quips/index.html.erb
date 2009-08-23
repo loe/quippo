@@ -1,10 +1,8 @@
-<h3>Showing <span><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline</span></h3>
+<h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
 
 <ol id="quips">
-<%- @quips.each do |q| -%>
-  <li>
-    <q>&ldquo;<%= q.text %>&rdquo;</q>
-    <cite><%= link_to((q.user.twitter_name.nil? ? q.user.twitter_screen_name : q.user.twitter_name), "http://twitter.com/#{q.user.twitter_screen_name}") %></cite> <em>at <%= link_to(q.created_at, "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em>
-  </li>
-<%- end -%>
+<%= render :partial => 'quips' %>
 </ol>
+<% content_for :javascript do %>
+<%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, '#{quips_path(:format => :js)}', '#{form_authenticity_token}');" %>
+<% end %>
