@@ -41,14 +41,14 @@ class AuthorizationsController < ApplicationController
     end
     
     respond_to do |wants|
-      wants.html { redirect_to user_quips_url(@user) }
+      wants.html { redirect_to user_quips_path(@user) }
     end
   end
   
   def destroy
     session[:user_id] = nil
     respond_to do |wants|
-      wants.html { redirect_to quips_url }
+      wants.html { redirect_to quips_path }
     end
   end
   
@@ -59,7 +59,7 @@ class AuthorizationsController < ApplicationController
   end
   
   def verify_oauth
-    redirect_to quips_url and return false unless params[:oauth_token] && 
+    redirect_to quips_path unless params[:oauth_token] && 
       session[:twitter_request_token] && 
       @request_token = unfreeze_request_token
   end

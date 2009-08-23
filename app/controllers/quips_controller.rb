@@ -1,5 +1,6 @@
 class QuipsController < ApplicationController
   before_filter :get_user, :prepare_search
+  before_filter :load_quip, :only => [:update, :destroy]
   
   def index
     @quips = (@user.try(:quips) || Quip).descending.search(@search_hash.merge(:include => :user, :page => params[:page]))
@@ -23,37 +24,22 @@ class QuipsController < ApplicationController
       wants.json { render :json => @quips.to_json(:include => :user) }
     end
   end
-
-  # GET /quips/1/edit
-  def edit    
-    @quip = Quip.find(params[:id])
-  end
-
-  # PUT /quips/1
-  # PUT /quips/1.xml
+  
   def update
-    @quip = Quip.find(params[:id])
-
     respond_to do |format|
       if @quip.update_attributes(params[:quip])
         format.js   { render :json => @quip }
-        format.xml  { head :ok }
       else
         format.js   { render :json => @quip }
-        format.xml  { render :xml => @quip.errors, :status => :unprocessable_entity }
       end
     end
   end
-
-  # DELETE /quips/1
-  # DELETE /quips/1.xml
+  
   def destroy
-    @quip = Quip.find(params[:id])
     @quip.destroy
 
     respond_to do |format|
-      format.html { redirect_to(quips_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to(quips_path) }
     end
   end
 
@@ -61,8 +47,12 @@ class QuipsController < ApplicationController
   
   def get_user
     if params[:user_id]
-      redirect_to(root_url) unless @user = User.find_by_twitter_screen_name(params[:user_id])
+      redirect_to(root_path) unless @user = User.find_by_twitter_screen_name(params[:user_id])
     end
+  end
+  
+  def load_quip
+    redirect_to quip_path unless @quip = current_user.quips.find(params[:id])
   end
   
   def prepare_search
