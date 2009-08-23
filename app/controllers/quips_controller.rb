@@ -4,7 +4,6 @@ class QuipsController < ApplicationController
   def index
     search_hash = {}
     search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q]
-    logger.debug search_hash.inspect
     
     @quips = (@user.try(:quips) || Quip).descending.search(search_hash.merge(:include => :user, :page => params[:page]))
     
@@ -17,9 +16,9 @@ class QuipsController < ApplicationController
   
   def show
     if params[:id] == 'random'
-      @quips = (@user.try(:quips) || Quip).random.first(:include => :user)
+      @quips = (@user.try(:quips) || Quip).random.paginate(:all, :page => nil, :per_page => 1, :include => :user)
     else
-      @quips = (@user.try(:quips) || Quip).find_all_by_id(params[:id])
+      @quips = (@user.try(:quips) || Quip).paginate(:all, :page => nil, :per_page => 1, :conditions => {:id => params[:id]})
     end
     
     respond_to do |wants|
