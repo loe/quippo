@@ -44,8 +44,8 @@ body {
 }
 
 #sky #clouds {
-  height: 200px;
-  background: url("/images/bg_clouds.png") repeat-x;
+  height: 300px;
+  background: url("/images/bg_clouds.png") repeat-x bottom center;
 }
 
 /* =HEADER */
@@ -168,7 +168,7 @@ body {
   margin-right: 10px;
   /*opacity: .75;*/
   padding: 5px;
-  width: 85%;
+  width: 100%;
 }
 
 #search .search.button {
@@ -215,6 +215,7 @@ body {
 }
 
 /* =BADGE_INFO */
+
 .badge_info code {
   font-size: 14px;
 }

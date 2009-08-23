@@ -2,8 +2,17 @@
   <div class="grid_12 prefix_4">
   <%- form_tag request.url, :id => 'search', :method => 'get' do -%>
     <%= text_field_tag :q, params[:q] %>
-    <%= link_to "Search", "#", :onclick => "$('search').submit(); return nil;", :class => 'search button' %>
-    <%#= link_to "Clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;", :class => 'cancel button' %>
+    <div class="buttons"><%= link_to "Search", "#", :onclick => "$('search').submit(); return nil;", :class => 'search button' %></div>
+    <%# link_to "Clear", "#", :onclick => "$('q').value = ''; $('search').submit(); return nil;", :class => 'cancel button' %>
   <%- end -%>
+  
+  
+  
+  <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
+
+  <div id="badges">
+    <%= link_to_remote 'jQuery Badge', :url => badge_info_url('jquery', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
+    <%= link_to_remote 'Prototype Badge', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :method => 'get' %>
+  </div>
   </div>
 </div>
