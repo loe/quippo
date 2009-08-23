@@ -10,6 +10,7 @@
   <body class="<%= body_class %>">
     <div id="sky">
       <%= render :partial => 'layouts/flashes' -%>
+      <%= render :partial => 'layouts/search' %>
       <div id="clouds"></div>
     </div>
     <div class="container_16">
@@ -17,7 +18,7 @@
         <h1>Quippopotamus</h1>
         <div id="nav">
           <%- if current_user -%>
-            <%= link_to image_tag('/images/avatar.png', :size => '73x73', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
+            <%= link_to image_tag(current_user.twitter_profile_image_url, :size => '48x48', :alt => 'Avatar'), '#', :id => 'avatar', :title => 'Profile' %>
             <h2><%= current_user.twitter_screen_name %></h2>
             <ul>
               <li <%= "class=\"selected\"" if @user == current_user %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
