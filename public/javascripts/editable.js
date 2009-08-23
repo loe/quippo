@@ -64,6 +64,7 @@ var Editable = Class.create({
   },
 
   edit: function(event) {
+    this.element.up().addClassName('editing');
     this.element.hide();
     this.editForm.show();
     this.editInput.activate();
@@ -96,6 +97,7 @@ var Editable = Class.create({
   },
 
   cancel: function(event) {
+    this.element.up().removeClassName('editing');
     this.element.show();
     this.editInput.value = this.value;
     this.editForm.hide();
