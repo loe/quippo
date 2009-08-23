@@ -49,6 +49,7 @@ var Editable = Class.create({
     this.cancelLink.update('Cancel');
     var buttons = new Element('div', { 'class':'buttons' });
     buttons.update(saveInput);
+    buttons.insert(' or ');
     buttons.insert(this.cancelLink);
     var methodInput = new Element('input', { 'type':'hidden', 'value':'put', 'name':'_method' });
     
