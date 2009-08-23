@@ -14,9 +14,9 @@ class QuipsController < ApplicationController
   
   def show
     if params[:id] == 'random'
-      @quips = (@user.try(:quips) || Quip).search_for(@search_hash).random.paginate(:all, :page => nil, :per_page => 1, :include => :user)
+      @quips = (@user.try(:quips) || Quip).random.search(@search_hash.merge(:include => :user, :limit => 1))
     else
-      @quips = (@user.try(:quips) || Quip).search_for(@search_hash).paginate(:all, :page => nil, :per_page => 1, :conditions => {:id => params[:id]})
+      @quips = (@user.try(:quips) || Quip).find_all_by_id(params[:id])
     end
     
     respond_to do |wants|
