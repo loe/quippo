@@ -171,8 +171,22 @@ body {
   width: 85%;
 }
 
-#search input:focus {
-/*  opacity: 1;*/
+#search .search.button {
+  background: transparent url('/images/icons/magnifying_glass.png') no-repeat left center;
+  border-bottom: 0 none;
+  display: block;
+  float: left;
+  height: 32px;
+  width: 32px;
+  text-indent: -10000px;
+}
+
+#search a.button:link, #search a.button:visited {
+  opacity: .5;
+}
+
+#search a.button:hover, #search a.button:active {
+  opacity: 1;
 }
 
 /* =FOOTER */
