@@ -46,7 +46,10 @@ EndlessPage.prototype = {
       this.current_page++; // move to next page
       new Ajax.Request(this.ajax_path, { 
         method:'get',
-        parameters: { authenticity_token: this.auth_token, page: this.current_page }
+        parameters: { 
+          authenticity_token: this.auth_token,
+          page: this.current_page
+        }
       });
     }
 
