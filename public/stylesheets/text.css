@@ -16,14 +16,15 @@ body {
   font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-p,dl,hr,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
+p,dl,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
   margin-bottom: 20px;
 }
 
 hr {
   clear: both;
+  margin-bottom: 17px;
   height: 0;
-  border-top: 1px solid #000;
+  border-top: 3px solid rgba(0, 0, 0, .25);
   border-bottom: 0;
 }
 
@@ -49,14 +50,20 @@ h1 {
 
 h2 {
   font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, .5);
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: -.05em;
+  color: rgba(0, 0, 0, .75);
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, .5);
 }
 
 h5 {
@@ -106,13 +113,6 @@ li {
 
 /* =NAV */
 
-h2 {
-  margin-bottom: 20px;
-  letter-spacing: -.05em;
-  text-align: center;
-  color: rgba(0, 0, 0, .5);
-}
-
 #nav li a {
   line-height: 30px;
   text-align: center;
@@ -139,21 +139,22 @@ h2 {
 }
 
 #nav li a#login {
-  background: #a2e7ff url("/images/icons/favicon_twitter.png") no-repeat 10px 50%;
-  padding-left: 40px;
-/*  line-height: 40px;*/
-border-top: 1px solid rgba(255, 255, 255, .5);
-border-bottom: 1px solid rgba(0, 0, 0, .25);
-border-right: 1px solid rgba(0, 0, 0, .25);
-border-left: 1px solid rgba(255, 255, 255, .5);
+  background: #a2e7ff url("/images/bg_button.png") repeat-x bottom center;
+  padding-left: 10px;
+  font-size: 14px;
   text-transform: none;
   text-shadow: none;
   text-align: left;
   color: rgba(0, 0, 0, .75);
 }
 
+#nav li a#login img {
+  margin-right: 5px;
+  vertical-align: text-bottom;
+}
+
 #nav li a#login:hover {
-  background-color: #3cf;
+  background-color: rgba(0, 0, 0, .75);
   color: #fff;
 }
 
