@@ -23,6 +23,7 @@
             <ul>
               <li <%= class_if(@user == current_user, 'selected') %>><%= link_to 'My Quips', user_quips_url(current_user.twitter_screen_name) %></li>
               <li <%= class_if(!@user, 'selected') %>><%= link_to 'All Quips', root_url %></li>
+              <li><a id="help_link" href="#">Help</a></li>
               <li><%= link_to 'Logout', logout_url, :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
             </ul>
           <%- else -%>
@@ -31,6 +32,7 @@
             <hr />
             <ul>
               <li><%= link_to image_tag('/images/icons/favicon_twitter.png') + ' Login with Twitter', login_url, :id => 'login', :class => 'button' %></li>
+              <li><a id="help_link" href="#">What is Quippo?</a></li>
             </ul>
           <%- end -%>
         </div>

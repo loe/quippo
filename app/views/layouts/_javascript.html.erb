@@ -14,3 +14,13 @@
 </script>
 
 <%= yield :javascript %>
+
+<script type="text/javascript" charset="utf-8">
+  helpText = <%= (render :partial => '/layouts/help').to_json %>
+  
+  function launchHelp() {
+    $j.facebox(helpText);
+  }
+  
+  Element.observe($('help_link'), "click", launchHelp);
+</script>
