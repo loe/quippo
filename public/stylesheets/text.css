@@ -28,7 +28,7 @@ hr {
 /* =LINKS */
 
 a:link, a:visited {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px dotted rgba(0, 0, 0, .2);
   color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
   text-decoration: none;
@@ -37,7 +37,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   color: rgba(0, 0, 0, 1.0);
-  border-bottom-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /* =HEADINGS */
