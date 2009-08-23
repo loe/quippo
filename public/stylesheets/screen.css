@@ -129,20 +129,20 @@ body {
 /* =SEARCH */
 
 #search {
-  background-color: rgba(0, 0, 0, .25);
-  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  overflow: hidden;
   padding: 10px;
-  position: absolute;
-  left: 0;
-  top: -80px;
-  width: 680px;
-  z-index: 10001;
 }
 
 #search input {
   font-size: 18px;
   padding: 5px;
-  width: 80%;
+  width: 95%;
 }
 
 /* =FOOTER */

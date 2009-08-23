@@ -12,4 +12,8 @@ module ApplicationHelper
       "#{user.screen_name}'s"
     end
   end
+  
+  def class_if(condition, *class_names)
+    "class=\"#{class_names.join(' ')}\"" if condition
+  end
 end
