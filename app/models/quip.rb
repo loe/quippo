@@ -3,6 +3,23 @@ class Quip < ActiveRecord::Base
   
   named_scope :descending, :order => 'id DESC'
   named_scope :random, :order => 'rand()'
+  named_scope :text_search, lambda { |terms|
+    predicates = []
+    search_terms = []
+    
+    terms.each do |term|
+      predicates << "(text LIKE ?)"
+      search_terms << "%#{term}%"
+    end
+    
+    conditions_array = [predicates.join(" OR "), search_terms].flatten
+        
+    {:conditions => conditions_array}
+  }
+  
+  can_search do
+    add_existing_scope :text_search
+  end
   
   validates_presence_of :text
 end
