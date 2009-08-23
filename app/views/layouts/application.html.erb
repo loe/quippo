@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -26,10 +26,12 @@
               <li><%= link_to 'Logout', logout_url, :method => 'delete', :id => 'logout', :title => 'Logout of Quippopotamus' %></li>
             </ul>
           <%- else -%>
+            <h3>Quippopotamus stores all of your favorite quips and quotes in one place.
+            <h4>Access them anywhere.</h4>
+            <hr />
             <ul>
               <li><%= link_to image_tag('/images/icons/favicon_twitter.png') + ' Login with Twitter', login_url, :id => 'login', :class => 'button' %></li>
             </ul>
-            <h2>Store all of your favorite quips and quotes in one place. <em>Access them anywhere.</em></h2> 
           <%- end -%>
         </div>
       </div>
