@@ -157,6 +157,7 @@ body {
 #search {
   background-color: rgba(0, 0, 0, .25);
   border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+  overflow: hidden;
   padding: 10px;
   position: absolute;
   left: 0;
@@ -167,8 +168,30 @@ body {
 
 #search input {
   font-size: 18px;
+  float: left;
   padding: 5px;
   width: 80%;
+}
+
+a.search:link, a.search:visited {
+  background: transparent url('/images/icons/magnifier.png') no-repeat 0 2px;
+  border: 0 none;
+  display: block;
+  float: left;
+  margin: 10px 5px 5px 5px;
+  padding-left: 20px;
+}
+
+a.cancel:link, a.cancel:visited {
+  background: transparent url('/images/icons/cross.png') no-repeat 0 0;
+  border: 0 none;
+  display: block;
+  float: left;
+  height: 16px;
+  width: 16px;
+  margin: 12px 0 5px 0;
+  text-indent: -10000px;
+  vertical-align: middle;
 }
 
 /* =FOOTER */
