@@ -43,14 +43,18 @@ var Editable = Class.create({
     this.editForm = new Element('form', { 'action': this.element.readAttribute('rel'), 'style':'display:none', 'class':'editor' });
     this.editInput = new Element(this.editFieldTag, { 'name':this.field, 'id':('edit_' + this.element.identify()) });
     this.editInput.value = this.element.innerHTML;
+    
     var saveInput = new Element('button', { 'class':'positive', 'type':'submit' });
     saveInput.update('Save');
+    
     this.cancelLink = new Element('a', { 'href':'#', 'class':'passive button' });
     this.cancelLink.update('Cancel');
+    
     var buttons = new Element('div', { 'class':'buttons' });
     buttons.update(saveInput);
     buttons.insert(' or ');
     buttons.insert(this.cancelLink);
+    
     var methodInput = new Element('input', { 'type':'hidden', 'value':'put', 'name':'_method' });
     
     this.editForm.insert(this.editInput);
@@ -67,6 +71,7 @@ var Editable = Class.create({
 
   edit: function(event) {
     this.element.up().addClassName('editing');
+    this.element.adjacent('.delete').first().show();
     this.element.hide();
     this.editForm.show();
     this.editInput.activate();
@@ -100,6 +105,7 @@ var Editable = Class.create({
 
   cancel: function(event) {
     this.element.up().removeClassName('editing');
+    this.element.adjacent('.delete').first().hide();
     this.element.show();
     this.editInput.value = this.value;
     this.editForm.hide();
