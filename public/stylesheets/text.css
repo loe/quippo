@@ -283,12 +283,12 @@ input, textarea {
 }
 
 #onehub a#logo {
-  background: transparent url('/images/onehub_white.png') center no-repeat;
+  background: transparent url('/images/onehub_white.png') left center no-repeat;
   border-bottom: 0 none;
   display: block;
   float: left;
   height: 26px;
-  width: 100px;
+  width: 30px;
 }
 
 #onehub a#logo img {
