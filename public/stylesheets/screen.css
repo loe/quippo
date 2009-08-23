@@ -1,14 +1,27 @@
 /*
 HIERARCHY:
+  =GRID OVERRIDE
   =BASE
   =SKY
   =HEADER
   =NAV
   =CONTENT
   =QUIPS
+  =SEARCH
   =FOOTER
 */
 
+/* =GRID OVERRIDE */
+/*  Grid is inactive when entire section is commented */
+/*
+body {
+  background: #fff url("/images/16_col.png") center top repeat-y !important;
+}
+
+#sky, #sky #flash {
+  background: none !important;
+}
+*/
 /* =BASE */
 
 body {
