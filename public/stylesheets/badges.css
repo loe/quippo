@@ -8,6 +8,7 @@
 #quip_container {
   font:normal 14px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
   line-height:20px;
+  width: 340px;
 }
 
 #quip_container ul,#quip_container ol {
