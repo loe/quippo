@@ -12,10 +12,11 @@
 // =======================================================================
 var EndlessPage = Class.create();
 EndlessPage.prototype = {
-  initialize: function (total_pages, url, auth_token) {
+  initialize: function (total_pages, viewport, url, auth_token) {
     this.timer = null;
     this.current_page = 1;
     this.total_pages = total_pages;
+    this.viewport = viewport;
     this.ajax_path = url;
     this.interval = 1000; // 1 second
     this.scroll_offset = 0.6; // 60%
@@ -39,10 +40,10 @@ EndlessPage.prototype = {
       return; 
     }
 
-    var offset = document.viewport.getScrollOffsets()[1]; // second of the pair is the horizontal scroll
+    var offset = document.viewport.getScrollOffsets()[1]; // second of the pair is the vertical scroll
 
     // if slider past our scroll offset, then fire a request for more data
-    if(offset/document.viewport.getHeight() > this.scroll_offset) {
+    if(offset/this.viewport.getHeight() > this.scroll_offset) {
       this.current_page++; // move to next page
       new Ajax.Request(this.ajax_path, { 
         method:'get',
