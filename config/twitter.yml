@@ -6,6 +6,7 @@ development:
     - "quippo"
     - "quippopotamus"
     - "qp"
+    - "#fact"
 
 production:
   key: UWf6uPbQGLNgoVALEaLEw

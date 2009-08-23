@@ -41,7 +41,7 @@ body {
 }
 
 #sky #clouds {
-  height: 180px;
+  height: 100px;
   background: url("/images/bg_clouds.png") repeat-x bottom center;
 }
 
