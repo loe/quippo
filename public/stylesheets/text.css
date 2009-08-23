@@ -29,10 +29,15 @@ hr {
 
 a:link, a:visited {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
+  color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease;
 }
 
 a:hover, a:active {
+  color: rgba(0, 0, 0, 1.0);
+  border-bottom-color: rgba(0, 0, 0, 0.5);
 }
 
 /* =HEADINGS */
@@ -139,6 +144,7 @@ h2 {
   height: 40px;
   margin: 20px auto;
   text-indent: -10000px;
+  -webkit-transition: none; /* this doesn't look so great with the transition turned on ... */
 }
 
 #nav li a#logout:hover {
