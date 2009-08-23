@@ -27,7 +27,7 @@ loop do
   sleep_count += 1
   
   if sleep_count > 200
-    e = RuntimeError("Twitter is fubar.")
+    e = RuntimeError.new("Twitter is fubar.")
     HoptoadNotifier.notify(e)
     raise e
   end
