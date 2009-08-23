@@ -227,33 +227,51 @@ input {
 }
 
 /* =BUTTONS */
+/* Abstracted from the Wufoo implementation - thanks guys! */
+/* http://particletree.com/features/rediscovering-the-button-element/ */
 
 .buttons {
-  line-height: 20px;
   font-size: 11px;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, .5);
 }
 
-.buttons .button {
+.buttons a.button, .buttons button {
   background-color: rgba(0, 0, 0, .25);
-  padding: 3px 10px;
+  padding: 6px 10px 6px 10px; /* Links */
   border: 0;
-  line-height: 14px;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  vertical-align: text-top;
-  color: #fff;
   border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
   text-shadow: 0 -1px rgba(0, 0, 0, .5);
+  color: #fff;
+  cursor: pointer;
 }
 
-.buttons .button:hover {
+.buttons button {
+  width: auto;
+  overflow: visible;
+  padding: 4px 10px 3px 10px; /* IE6 */
+}
+
+.buttons button[type] {
+  padding: 4px 10px 5px 10px; /* Firefox */
+  line-height: 18px; /* Safari */
+}
+
+*:first-child+html button[type] {
+  padding: 4px 10px 3px 10px; /* IE7 */
+}
+
+.buttons button:hover, .buttons a.button:hover, .buttons a.button:active {
   background-color: rgba(0, 0, 0, .5);
 }
 
-.buttons .passive {
+.buttons a.passive {
   background-color: rgba(0, 0, 0, .05);
   text-shadow: none;
   color: rgba(0, 0, 0, .5);
