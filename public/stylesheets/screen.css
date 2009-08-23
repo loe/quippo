@@ -51,6 +51,7 @@ body {
   position: fixed;
 /*  background: rgba(0, 0, 0, .05);*/
   height: 100%;
+  z-index: 10001;
 }
 
 #header h1 {
