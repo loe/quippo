@@ -8,9 +8,9 @@
     <div id="listing" class="grid_10 prefix_4">
       <p>Showing <strong id="quip_count"><%= pluralize @quips.size, 'quip' %></strong> from <strong><%= identify_user(@user) %> timeline.</strong></p>
       <div id="badges" class="buttons">
-        Embed: 
+        <p><span>Embed: </span>
         <%= link_to_remote 'jQuery', :url => badge_info_url('jquery', :format => 'js', :badge_url => @badge_url), :html => {:id => 'jquery', :class => 'button'}, :method => 'get' %>
-        <%= link_to_remote 'Prototype', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :html => {:id => 'prototype', :class => 'button'}, :method => 'get' %>
+        <%= link_to_remote 'Prototype', :url => badge_info_url('prototype', :format => 'js', :badge_url => @badge_url), :html => {:id => 'prototype', :class => 'button'}, :method => 'get' %></p>
       </div>
     </div>
   </div>

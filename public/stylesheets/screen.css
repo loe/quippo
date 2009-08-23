@@ -209,28 +209,28 @@ body {
   overflow: hidden;
 }
 
+#badges span {
+  font-style: normal;
+  font-size: 12px;
+}
+
 #badges .button {
-  /*background-position: center center;
-    background-repeat: no-repeat;
-    display: inline-block;*/
-  /*float: left;*/
-  /*height: 16px;
-    width: 16px;
-    padding: 1px;
-    margin-top: 3px;
-    margin-left: 5px;*/
-  /*padding-left: 23px;*/
-  /*text-indent: -10000px;*/
+  background: transparent center no-repeat;
+  border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-indent: -10000px;
 }
 
-#badges img {
-  border: 1px solid rgba(0, 0, 0, .2);
-}
-
-/*#badges #jquery {
-  background-image: url('/images/icons/jquery.png');
+#badges #jquery {
+  background-image: url('/images/jquery_badge.png');
+  height: 15px;
+  width: 70px;
 }
 
 #badges #prototype {
-  background-image: url('/images/icons/prototype.png');
-}*/
+  background-image: url('/images/prototype_badge.png');
+  height: 15px;
+  width: 86px;
+}
