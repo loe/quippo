@@ -35,12 +35,11 @@ class QuipsController < ApplicationController
     @quip = Quip.find(params[:id])
 
     respond_to do |format|
-      if @quip.update_attributes(params[:event])
-        flash[:notice] = 'Quip was successfully updated.'
-        format.html { redirect_to(index) }
+      if @quip.update_attributes(params[:quip])
+        format.js   { render :json => @quip }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.js   { render :json => @quip }
         format.xml  { render :xml => @quip.errors, :status => :unprocessable_entity }
       end
     end

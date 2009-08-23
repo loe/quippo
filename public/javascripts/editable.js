@@ -10,6 +10,7 @@ var Editable = Class.create({
     this.value = this.element.innerHTML;
     this.setupForm();
     this.setupBehaviors();
+    this.model = this.element.getAttribute("model");
   },
   
   // Tries to make a good guess at model/attribute names.
@@ -76,9 +77,9 @@ var Editable = Class.create({
       onSuccess: function(transport) {
         var json = transport.responseText.evalJSON();
         var attr = this.field.replace(/\w+\[(\w+)\]/, '$1');
-        this.value = json[attr];
+        this.value = json[this.model][attr];
         this.editInput.value = json[attr];
-        this.element.update(json[attr]);
+        this.element.update(json[this.model][attr]);
         form.enable();
         this.cancel();
       }.bind(this),
