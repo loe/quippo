@@ -198,7 +198,7 @@ li {
   font-style: italic;
 }
 
-#quips cite, #quips em {
+#quips cite, #quips span, #quips em {
   font-size: 14px;
   font-style: normal;
 }
@@ -211,7 +211,7 @@ li {
   color: rgba(0, 0, 0, .5);
 }
 
-#quips em {
+#quips span, #quips em {
   color: rgba(0, 0, 0, .25);
 }
 
