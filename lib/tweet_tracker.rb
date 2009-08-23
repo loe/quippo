@@ -7,18 +7,37 @@ class TweetTracker
     query_string = URI.encode(query.join(","))
     
     uri = URI.parse("http://#{Quippo.config.twitter[:login]}:#{Quippo.config.twitter[:password]}@stream.twitter.com/track.json?track=#{query_string}")
-    Yajl::HttpStream.get(uri, :symbolize_keys => true) do |hash|
-      RAILS_DEFAULT_LOGGER.debug "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
+    
+    loop do
+      sleep_count = 0
+      sleep_growth = 2
+      sleep_cap = 240
       
-      if block_given?
-        yield hash, query
-      else
-        if hash.has_key?(:delete)
-          delete_quip(hash, query)
+      Yajl::HttpStream.get(uri, :symbolize_keys => true) do |hash|
+        RAILS_DEFAULT_LOGGER.debug "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
+      
+        if block_given?
+          yield hash, query
         else
-          add_quip(hash, query)
+          if hash.has_key?(:delete)
+            delete_quip(hash, query)
+          else
+            add_quip(hash, query)
+          end
         end
       end
+      
+      HoptoadNotifier.notify(
+        {
+          :error_class => "Twitter Error", 
+          :error_message => "Twitter Error: Disconnected",
+        }
+      )
+      
+      s = sleep_count * sleep_growth
+      s = sleep_cap if s > sleep_cap
+      sleep(s)
+      sleep_count += 1
     end
   end
   
