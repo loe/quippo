@@ -247,6 +247,13 @@ input, textarea {
 }
 
 /* =ONEHUB */
+#in_the_grass.container_16 .prefix_10 {
+  padding-left: 569px;
+}
+
+#in_the_grass.container_16  .grid_6 {
+  width: 371px;
+}
 
 #onehub {
   background-color: #000; /* in case someone comes by on a browser that's not rgba friendly */
@@ -288,7 +295,7 @@ input, textarea {
   display: block;
   float: left;
   height: 26px;
-  width: 30px;
+  width: 100px;
 }
 
 #onehub a#logo img {
