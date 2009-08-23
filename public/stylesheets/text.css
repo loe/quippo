@@ -88,7 +88,7 @@ li {
   font-weight: bold;
 }
 
-#sky #flash .success span {
+#sky #flash .notice span {
   background: url("/images/icons/tick.png") no-repeat;
   padding-left: 20px;
   color: #090;
@@ -207,7 +207,7 @@ h2 {
 /* =FORMS */
 
 input {
-  padding: 3px;
+  line-height: 18px;
   border-top: 1px solid rgba(0, 0, 0, .5);
   border-right: 1px solid rgba(0, 0, 0, .25);
   border-bottom: 1px solid rgba(0, 0, 0, .25);
@@ -215,11 +215,27 @@ input {
   font: inherit;
 }
 
+/* =EDITABLE */
+
+.editable {
+  border: 1px solid transparent;
+}
+
+.editable:hover {
+  background-color: rgba(255, 255, 204, 1);
+  border: 1px dashed rgba(0, 0, 0, .25);
+}
+
 /* =BUTTONS */
+
+.buttons {
+  font-size: 11px;
+  text-transform: uppercase;
+}
 
 .button:link, .button:visited {
   background-color: rgba(0, 0, 0, .25);
-  padding: 5px 10px;
+  padding: 3px 10px;
   border: 0;
   font-size: 11px;
   font-weight: bold;

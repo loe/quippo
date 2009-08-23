@@ -129,31 +129,14 @@ body {
   border-color: rgba(0, 0, 0, .5);
 }
 
-#quips li.mine .edit {
-  visibility: hidden;
-}
-
-#quips li.mine:hover .edit {
-  visibility: visible;
+#quips li q {
+  display: block;
 }
 
 /* =SEARCH */
 
 #search {
-  background-color: rgba(0, 0, 0, .2);
-  border-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  overflow: hidden;
-  padding: 10px;
-}
-
-#search input {
-  font-size: 18px;
-  padding: 5px;
-  width: 95%;
+/*  padding: 3px;*/
 }
 
 /* =FOOTER */
@@ -173,12 +156,10 @@ body {
 
 /* =EDITABLE */
 
-.editable {
-  padding: 1px;
+.editor #edit_quip_text {
+  width: 100%;
 }
 
-.editable:hover {
-  padding: 0;
-  background-color: rgba(255, 255, 204, 1);
-  border: 1px dashed rgba(0, 0, 0, .25);
+.editor input[type=submit] {
+  font-size: 12px;
 }

@@ -34,7 +34,7 @@ class AuthorizationsController < ApplicationController
       # Store the user id in the session
       session[:user_id] = @user.id
       
-      flash[:notice] = "Welcome, #{@user.twitter_screen_name}!"
+      flash[:notice] = "You were successfully logged in as #{@user.twitter_screen_name}!"
     else
       # Oh no something bad happened :(
       flash[:error] = "We were unable to log you in. Sorry!"
