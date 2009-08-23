@@ -25,7 +25,7 @@ body {
 }
 
 #sky #flash {
-  background: #fff;
+  background: #fff url('/images/bg_flash.png') repeat-x bottom left;
   text-align: center;
 }
 
