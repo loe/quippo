@@ -6,7 +6,7 @@ class QuipsController < ApplicationController
     search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q]
     logger.debug search_hash.inspect
     
-    @quips = (@user.try(:quips) || Quip).descending.search(search_hash).paginate(:include => :user, :page => params[:page])
+    @quips = (@user.try(:quips) || Quip).descending.search(search_hash.merge(:include => :user, :page => params[:page]))
     
     respond_to do |wants|
       wants.html {  }
