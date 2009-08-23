@@ -274,7 +274,13 @@ input, textarea {
 }
 
 .buttons a.passive {
-  background-color: rgba(0, 0, 0, .05);
+  background-color: rgba(0, 0, 0, .1);
+  font-weight: normal;
   text-shadow: none;
   color: rgba(0, 0, 0, .5);
+}
+
+.buttons a.passive:hover {
+  background-color: rgba(0, 0, 0, .25);
+  color: rgba(0, 0, 0, .75);
 }

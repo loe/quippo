@@ -143,6 +143,10 @@ body {
   display: block;
 }
 
+#quips li .buttons {
+  margin-bottom: 20px;
+}
+
 /* =SEARCH */
 
 #search {
