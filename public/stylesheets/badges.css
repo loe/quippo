@@ -1,17 +1,40 @@
+/* Resets */
+#quip_container,#quip_container cite,#quip_container em,#quip_container img,#quip_container q,#quip_container strong,#quip_container b,#quip_container u,#quip_container i,#quip_container ol,#quip_container ul,#quip_container li { margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent }
+#quip_container ol,#quip_container ul { list-style:none }
+#quip_container :focus { outline:0 }
+
+/* Basic Layout */
+
 #quip_container {
-  font: normal 16px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font:normal 14px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  line-height:20px;
+  width: 340px;
 }
 
-#quip_container ul, #quip_container ol {
-  list-style: none;
-  padding: 0;
+#quip_container ul,#quip_container ol {
+  list-style:none;
 }
 
 #quip_container li {
-  margin: 0;
+  border: 3px solid #efefef;
+  border-color: rgba(0,0,0,0.05);
+  border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+  margin: 0 0 10px 0;
+  padding: 17px;
+}
+
+#quip_container q {
+  font-style:italic;
 }
 
 #quip_container cite {
-  font-style: none;
-  margin-left: .5em;
+  color: #949494;
+  color: rgba(0,0,0,0.5);
+  display:block;
+  font-size:12px;
+  font-style:normal;
+}
+
+#quip_container cite:before {
+  content:'~ ';
 }
