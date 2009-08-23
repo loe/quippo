@@ -1,0 +1,18 @@
+<p>In order to user our jQuery badge, copy and paste the following code onto your site:</p>
+
+<hr />
+<p>In the &lt;head&gt; element:</p>
+<code>
+  &lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;<br />
+  &lt;script&gt;google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);&lt;/script&gt;<br />
+  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;<br />
+  &nbsp;&nbsp;var quippoUrl = &#x27;<%= @badge_url %>&#x27;;<br />
+  &lt;/script&gt;<br>
+  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;http://quippo.local/badges/jquery.js&quot;&gt;&lt;/script&gt;
+</code>
+
+<hr />
+<p>In the &lt;body&gt; element:</p>
+<code>
+  &nbsp;&nbsp;&lt;div id=&quot;quip_container&quot;&gt;&lt;/div&gt;
+</code>

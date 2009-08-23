@@ -1,5 +1,5 @@
 class QuipsController < ApplicationController
-  before_filter :get_user, :prepare_search
+  before_filter :get_user, :prepare_search, :get_badge_url
   before_filter :load_quip, :only => [:update, :destroy]
   
   def index
@@ -58,5 +58,9 @@ class QuipsController < ApplicationController
   def prepare_search
     @search_hash = {}
     @search_hash[:text_search] = params[:q].split(/\s|,/) if params[:q].present?
+  end
+  
+  def get_badge_url
+    @badge_url = url_for(:id => 'random', :format => 'json', :q => params[:q], :action => 'show', :callback => '10101', :controller => 'quips', :user_id => @user, :only_path => false).gsub(/10101/, '?')
   end
 end
