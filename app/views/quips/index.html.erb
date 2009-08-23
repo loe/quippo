@@ -1,4 +1,4 @@
-<p>Showing <%= pluralize @quips.size, 'quip' %> from <%= identify_user(@user) %> timeline.</p>
+<h3>Showing <span><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline</span></h3>
 
 <ol id="quips">
 <%- @quips.each do |q| -%>
