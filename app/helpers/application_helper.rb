@@ -4,10 +4,10 @@ module ApplicationHelper
   end
   
   def identify_user(user)
-    if user == current_user
-      "your"
-    elsif user.nil?
+    if user.nil?
       "the public"
+    elsif user == current_user
+      "your"
     else
       "#{user.twitter_screen_name}'s"
     end
