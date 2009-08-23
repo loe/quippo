@@ -41,7 +41,9 @@
         <%= yield %>
       </div>
     </div>
-    <div id="footer"></div>
+    <div id="footer">
+      <p id="onehub"><%= link_to "#{image_tag('/images/logo_onehub_rev100x26.png', :size => '100x26', :alt => 'Powered by Onehub')}", "http://onehub.com" %> Quippopotamus is powered by <%= link_to "Onehub", "http://onehub.com" %></p>
+    </div>
     <%= render :partial => 'layouts/javascript' %>
   </body>
 </html>

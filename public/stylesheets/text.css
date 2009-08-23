@@ -246,6 +246,12 @@ input, textarea {
   background-color: rgba(255, 255, 204, 1);
 }
 
+/* =ONEHUB */
+#onehub {
+  color: #444;
+  font-size: 12px;
+}
+
 /* =BUTTONS */
 /* Abstracted from the Wufoo implementation - thanks guys! */
 /* http://particletree.com/features/rediscovering-the-button-element/ */

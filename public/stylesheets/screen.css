@@ -209,15 +209,23 @@ body {
   overflow: hidden;
 }
 
+#in_the_sky #badges p {
+  /*line-height: normal;*/
+}
+
 #badges span {
+  display: inline-block;
   font-style: normal;
   font-size: 12px;
+  padding-top: 1px;
+  vertical-align: top;
 }
 
 #badges .button {
   background: transparent center no-repeat;
   border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
   display: inline-block;
+  margin-top: -2px;
   padding-left: 0;
   padding-right: 0;
   text-indent: -10000px;
