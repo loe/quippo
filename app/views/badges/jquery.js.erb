@@ -1,6 +1,9 @@
+<%= render :partial => 'badge_setup' %>
+
 var QuippoBadge = new Object({
   container: '#quip_container',
-  url: quippoUrl
+  url: quippoUrl,
+  hideAuthor: quippoHideAuthor
 });
 
 QuippoBadge.display = function (url) {
@@ -17,7 +20,11 @@ QuippoBadge.buildQuip = function (quip) {
   quipString += "<ul id=\"quip_list\">";
   quipString +=   "<li class=\"quip\">";
   quipString +=     "<q>" + quip.text + "</q>";
-  quipString +=     "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+  
+  if (!this.hideAuthor) {
+    quipString +=     "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+  };
+  
   quipString +=   "</li>";
   quipString += "</ul>";
   

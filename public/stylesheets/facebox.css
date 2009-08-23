@@ -22,7 +22,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 8000;
+  z-index: 9999;
   text-align: left;
 }
 
@@ -42,7 +42,7 @@
 #facebox .body {
   padding: 10px;
   background: #fff;
-  width: 370px;
+  width: 700px;
 }
 
 #facebox .loading {

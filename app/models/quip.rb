@@ -22,4 +22,8 @@ class Quip < ActiveRecord::Base
   end
   
   validates_presence_of :text
+  
+  def filter_attributions!
+    
+  end
 end

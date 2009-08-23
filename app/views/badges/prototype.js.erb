@@ -1,12 +1,15 @@
 <%= File.read "#{RAILS_ROOT}/public/javascripts/jsonp.js" %>
 
+<%= render :partial => 'badge_setup' %>
+
 var QuippoBadge = Class.create();
 Object.extend(QuippoBadge.prototype);
 
 QuippoBadge.prototype = {
-  initialize: function(url) {
+  initialize: function(url, hideAuthor) {
     this.url = url;
     this.container = $('quip_container');
+    this.hideAuthor = hideAuthor;
   },
   
   buildQuip: function (quip) {
@@ -15,7 +18,11 @@ QuippoBadge.prototype = {
     quipString += "<ul id=\"quip_list\">";
     quipString +=   "<li class=\"quip\">";
     quipString +=     "<q>" + quip.text + "</q>";
-    quipString +=     "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+    
+    if (!this.hideAuthor) {
+      quipString +=   "<cite>" + ((quip.user.twitter_name.length == 0) ? quip.user.twitter_screen_name : quip.user.twitter_name) + "</cite>";
+    };
+    
     quipString +=   "</li>";
     quipString += "</ul>";
     
@@ -41,7 +48,7 @@ QuippoBadge.prototype = {
   }
 };
 
-document.observe("dom:loaded", function () {
-  badge = new QuippoBadge(quippoUrl);
+document.observe("dom:loaded", function () {  
+  badge = new QuippoBadge(quippoUrl, quippoHideAuthor);
   badge.display();
 });

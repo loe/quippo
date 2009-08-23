@@ -10,6 +10,8 @@ HIERARCHY:
   =FOOTER
   =FORMS
   =EDITABLE
+  =BADGE_INFO
+  
 */
 
 /* =BASE */
@@ -42,8 +44,8 @@ body {
 }
 
 #sky #clouds {
-  height: 200px;
-  background: url("/images/bg_clouds.png") repeat-x;
+  height: 300px;
+  background: url("/images/bg_clouds.png") repeat-x bottom center;
 }
 
 /* =HEADER */
@@ -88,10 +90,13 @@ body {
 
 #nav ul {
   list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #nav li {
   margin: 0;
+  padding-left: 0;
 }
 
 #nav li a {
@@ -109,8 +114,9 @@ body {
 /* =QUIPS */
 
 #quips {
-  list-style-type: none;
   color: rgba(0, 0, 0, .75);
+  list-style-type: none;
+  margin-bottom: 60px;
 }
 
 #quips li {
@@ -129,14 +135,22 @@ body {
   border-color: rgba(0, 0, 0, .5);
 }
 
+#quips li.editing {
+  border-style: dashed;
+}
+
 #quips li q {
   display: block;
 }
 
+#quips li .buttons {
+  margin-bottom: 20px;
+}
+
 /* =SEARCH */
 
-#search {
-/*  padding: 3px;*/
+#search input {
+  width: 100%;
 }
 
 /* =FOOTER */
@@ -162,4 +176,10 @@ body {
 
 .editor input[type=submit] {
   font-size: 12px;
+}
+
+/* =BADGE_INFO */
+
+.badge_info code {
+  font-size: 14px;
 }

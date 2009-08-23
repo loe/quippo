@@ -1,7 +1,7 @@
 // Editable: Better in-place-editing
 // http://github.com/nakajima/nakatype/wikis/better-edit-in-place-editable-js
 var Editable = Class.create({
-  editFieldTag: 'input',
+  editFieldTag: 'textarea',
 
   initialize: function(element, options) {
     Object.extend(this, options);
@@ -41,21 +41,16 @@ var Editable = Class.create({
   
   setupForm: function() {
     this.editForm = new Element('form', { 'action': this.element.readAttribute('rel'), 'style':'display:none', 'class':'editor' });
-    
     this.editInput = new Element(this.editFieldTag, { 'name':this.field, 'id':('edit_' + this.element.identify()) });
     this.editInput.value = this.element.innerHTML;
-    
-    var saveInput = new Element('button', { 'class':'save button', 'type':'submit' });
+    var saveInput = new Element('button', { 'class':'positive', 'type':'submit' });
     saveInput.update('Save');
-    
-    this.cancelLink = new Element('a', { 'href':'#', 'class':'edit button' });
+    this.cancelLink = new Element('a', { 'href':'#', 'class':'passive button' });
     this.cancelLink.update('Cancel');
-    
     var buttons = new Element('div', { 'class':'buttons' });
     buttons.update(saveInput);
     buttons.insert(' or ');
     buttons.insert(this.cancelLink);
-    
     var methodInput = new Element('input', { 'type':'hidden', 'value':'put', 'name':'_method' });
     
     this.editForm.insert(this.editInput);
