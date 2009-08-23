@@ -1,18 +1,21 @@
-<p>In order to user our Prototype badge, copy and paste the following code onto your site:</p>
+<div class="badge_info">
+  <p>In order to user our Prototype badge, copy and paste the following code onto your site:</p>
 
-<hr />
-<p>In the &lt;head&gt; element:</p>
-<code>
-  &lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;google.load(&quot;prototype&quot;, &quot;1.6.0.3&quot;);&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
-  &nbsp;&nbsp;var quippoUrl = &#x27;<%= @badge_url %>&#x27;;
-  &lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;http://quippo.local/badges/prototype.js&quot;&gt;&lt;/script&gt;
-</code>
+  <hr />
+  <p>In the &lt;head&gt; element:</p>
+  <code>
+    &lt;script src=&quot;http://www.google.com/jsapi&quot;&gt;&lt;/script&gt;<br>
+    &lt;script&gt;google.load(&quot;prototype&quot;, &quot;1.6.0.3&quot;);&lt;/script&gt;<br>
+    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;<br>
+    &nbsp;&nbsp;var quippoUrl = &#x27;<%= @badge_url %>&#x27;;<br>
+    &nbsp;&nbsp;var quippoHideAuthor = false; // set to true if you want the author hidden<br />
+    &lt;/script&gt;<br>
+    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;http://quippo.local/badges/prototype.js&quot;&gt;&lt;/script&gt;
+  </code>
 
-<hr />
-<p>In the &lt;body&gt; element:</p>
-<code>
-  &nbsp;&nbsp;&lt;div id=&quot;quip_container&quot;&gt;&lt;/div&gt;
-</code>
+  <hr />
+  <p>In the &lt;body&gt; element:</p>
+  <code>
+    &nbsp;&nbsp;&lt;div id=&quot;quip_container&quot;&gt;&lt;/div&gt;
+  </code>
+</div>
