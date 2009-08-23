@@ -1,6 +1,6 @@
 <%- @quips.each do |q| -%>
   <li>
-    <q>&ldquo;<%= q.text %>&rdquo;</q>
+    <q class="editable" id="quip_<%= q.id %>" rel="<%= url_for q %>">&ldquo;<%= q.text %>&rdquo;</q>
     <cite><%= link_to((q.user.twitter_name.nil? ? q.user.twitter_screen_name : q.user.twitter_name), "http://twitter.com/#{q.user.twitter_screen_name}") %></cite> <em>at <%= link_to(q.created_at, "http://twitter.com/#{q.user.twitter_screen_name}/status/#{q.twitter_id}") %></em>
   </li>
 <%- end -%>
