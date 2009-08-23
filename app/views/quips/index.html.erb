@@ -6,10 +6,14 @@
 
 <h3>Showing <span id="quip_count"><%= pluralize @quips.size, 'quip' %></span> from <span><%= identify_user(@user) %> timeline.</span></h3>
 
+<div id="badges">
+  <%= url_for(:id => 'random', :format => 'json', :action => 'show', :callback => '10101', :controller => 'quips', :user_id => @user, :only_path => false).gsub(/10101/, '?') %>
+</div>
+
 <ol id="quips">
   <%= render :partial => 'quips' %>
 </ol>
 
 <% content_for :javascript do %>
-  <%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, $('quips'), '#{quips_path(:format => :js)}', '#{form_authenticity_token}');" %>
+  <%= javascript_tag "var ep = new EndlessPage(#{@quips.total_pages}, $('quips'), '#{url_for({:controller => 'quips', :format => :js, :q => params[:q]})}', '#{form_authenticity_token}');" %>
 <% end %>
