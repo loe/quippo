@@ -46,5 +46,23 @@ LOL
         assert_equal expected, @quip.text
       end
     end
+    
+    context "with prefix retweet style text" do
+      setup do
+        @quip.text = "RT @texel_quippo_2: hi quippo! #awesome"
+      end
+
+      should "set the attribution properly" do
+        @quip.filter_attributions!
+        assert_equal @quip.attribution, "@texel_quippo_2"
+      end
+
+      should "set the rest of the text back to normal" do
+        @quip.filter_attributions!
+
+        expected = "hi quippo! #awesome"
+        assert_equal expected, @quip.text
+      end
+    end
   end
 end
