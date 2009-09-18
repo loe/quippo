@@ -8,7 +8,7 @@ class TweetTracker
 
     uri = URI.parse("http://#{Quippo.config.twitter[:login]}:#{Quippo.config.twitter[:password]}@stream.twitter.com/track.json?track=#{query_string}")
     Yajl::HttpStream.get(uri, :symbolize_keys => true) do |hash|
-      RAILS_DEFAULT_LOGGER.debug "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
+      Rails.logger.warn "handling quip #{hash[:id]} from user #{hash[:user][:id]}"
 
       if block_given?
         yield hash, query
