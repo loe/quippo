@@ -9,3 +9,5 @@ coverage/*
 config/twitter_api.yml
 tracker.log
 !.keep
+db/sphinx/*
+config/development.sphinx.conf
