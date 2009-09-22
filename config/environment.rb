@@ -65,6 +65,7 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
   require "#{RAILS_ROOT}/lib/rack/jsonp"
   config.middleware.use Rack::JSONP
 end
