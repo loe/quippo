@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../config/environment'
 
-puts "=> Tracking: #{Quippo.config.twitter[:track].join(", ")}"
+Rails.logger.warn "=> Tracking: #{Quippo.config.twitter[:track].join(", ")}"
 
 loop do
   sleep_count = 0
