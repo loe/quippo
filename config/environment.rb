@@ -41,7 +41,7 @@ Rails::Initializer.run do |config|
              :lib => false,
              :version => '>= 1.0.10'
              
-  config.gem 'RedCloth'
+  config.gem 'RedCloth',
              :lib => 'redcloth',
              :version => '4.2.2'
   
