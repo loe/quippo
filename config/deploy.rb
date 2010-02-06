@@ -17,7 +17,7 @@ role :db,  "69.164.192.68", :primary => true
 
 # Deploy details
 set :user, "deploy"
-set :deploy_to, "/var/www/sites/#{application}"
+set :deploy_to, "/var/www/sites/u/apps/#{application}"
 set :use_sudo, false
 set :checkout, 'export'
 
