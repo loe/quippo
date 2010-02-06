@@ -3,7 +3,7 @@ set :rails_env, 'production'
 
 # Who are we?
 set :application, 'quippo'
-set :repository, "git@github.com:railsrumble/rr09-team-228.git"
+set :repository, "git@github.com:onehub/quippo.git"
 set :scm, "git"
 set :deploy_via, :remote_cache
 set :branch, "master"
@@ -17,7 +17,7 @@ role :db,  "69.164.192.68", :primary => true
 
 # Deploy details
 set :user, "deploy"
-set :deploy_to, "/var/www/sites/u/apps/#{application}"
+set :deploy_to, "/var/www/sites/#{application}"
 set :use_sudo, false
 set :checkout, 'export'
 
