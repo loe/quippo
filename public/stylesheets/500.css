@@ -1,0 +1,100 @@
+/*
+FILENAME: 500.css
+DESCRIPTION: This stylesheet serves global declarations for http://quippopotam.us
+AUTHOR: Matthew Anderson > http://matthew-anderson.net
+*/
+
+@-webkit-keyframes ache {
+ 0% { opacity: .3; }
+ 50% { opacity: 1.0; }
+ 100% { opacity: .3; }
+}
+
+header, section, footer, aside, nav, article, figure { display: block; } /* HTML5 tags */
+
+html, body { height: 100%; }
+
+body {
+  background: #000 url("../images/quippo-toothache.jpg") no-repeat 50%;
+  color: #fff;
+  font: normal 13px/20px Helvetica, sans-serif;
+}
+
+a:link, a:visited {
+  background: #2b2759;
+  background: -moz-linear-gradient(top, #534bac, #2b2759);
+  background: -webkit-gradient(linear, left top, left bottom, from(#534bac), to(#2b2759));
+  border: 1px solid #000;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  color: #aaa7d8;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 19px 8px 19px;
+  text-decoration: none;
+  text-shadow: 0 -1px #000;
+  -moz-transition: -moz-box-shadow 0.2s linear;
+  -webkit-transition: -webkit-box-shadow 0.2s linear;
+}
+
+a strong {
+  color: #fff;
+  font-weight: normal;
+}
+
+a:hover {
+  -moz-box-shadow: 0 0 20px rgba(255, 0, 204, .6);
+  -webkit-box-shadow: 0 0 20px rgba(255, 0, 204, .6);
+}
+
+a:active {
+  background: -moz-linear-gradient(top, #484194, #201d41);
+  background: -webkit-gradient(linear, left top, left bottom, from(#484194), to(#201d41));
+  position: relative;
+  top: 1px;
+}
+
+.tooth {
+  -webkit-animation-name: ache;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  background: url("../images/ache.png") no-repeat 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: .3;
+}
+
+section {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+  width: 960px;
+}
+
+article {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 400px;
+}
+
+h1, h2 { letter-spacing: -.05em; }
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(255, 255, 255, .6);
+}
+
+h2 {
+  color: rgb(60, 55, 124);
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 30px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(60, 55, 124, .6);
+}
