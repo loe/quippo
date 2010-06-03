@@ -20,39 +20,3 @@ config.action_controller.allow_forgery_protection    = false
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
-
-config.gem 'thoughtbot-factory_girl', 
-           :lib => 'factory_girl', 
-           :source => 'http://gems.github.com', 
-           :version => '>= 1.2.2'
-config.gem 'thoughtbot-shoulda', 
-           :lib => 'shoulda', 
-           :source => 'http://gems.github.com', 
-           :version => '>= 2.10.2'
-config.gem 'jtrupiano-timecop',
-           :version => '0.2.1',
-           :source => 'http://gems.github.com',
-           :lib => 'timecop'
-
-# Webrat and dependencies
-# NOTE: don't vendor nokogiri - it's a binary Gem
-config.gem 'nokogiri',
-           :version => '>=1.3.2',
-           :lib     => false
-config.gem 'webrat',
-           :version => '0.4.4'
-
-# At the bottom due to a loading bug in Rails
-config.gem 'jferris-mocha', 
-           :version => '0.9.5.0.1241126838',
-           :source  => 'http://gems.github.com', 
-           :lib     => 'mocha'
-
-HOST = 'localhost'
-
-require 'factory_girl'
-begin require 'redgreen'; rescue LoadError; end
-
-config.after_initialize do
-  Timecop.travel(Time.now)
-end
