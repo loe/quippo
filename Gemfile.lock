@@ -4,6 +4,10 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  pg: 
+    group: 
+    - :default
+    version: ">= 0"
   rails: 
     group: 
     - :default
@@ -99,6 +103,8 @@ specs:
     version: 0.4.0
 - oauth: 
     version: 0.3.2
+- pg: 
+    version: 0.9.0
 - rails: 
     version: 2.3.8
 - shoulda: 
@@ -111,7 +117,7 @@ specs:
     version: 2.3.14
 - yajl-ruby: 
     version: 0.7.6
-hash: e9f6cb66f5c94eb6ba429b7b6da41bceb84c2d29
+hash: 6cb33ead5ef0dd473841a98ac39b03925d0a511b
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

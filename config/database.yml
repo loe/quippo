@@ -1,29 +1,26 @@
-<% PASSWORD_FILE = File.join(RAILS_ROOT, '..', '..', 'shared', 'config', 'dbpassword') %>
-
 development:
-  adapter: mysql
+  adapter: postgresql
   database: quippo_development
-  username: root
-  password: 
+  username: Andrew
   host: localhost
-  encoding: utf8
+  encoding: UTF8
+  pool: 5
+  timeout: 5000
 
-test: &TEST
-  adapter: mysql
+test:
+  adapter: postgresql
   database: quippo_test
-  username: root
-  password: 
+  username: Andrew
   host: localhost
-  encoding: utf8
+  encoding: UTF8
+  pool: 5
+  timeout: 5000
 
 production:
-  adapter: mysql
+  adapter: postgresql
   database: quippo_production
-  username: quippo
-  password: <%= File.read(PASSWORD_FILE).chomp if File.readable? PASSWORD_FILE %>
+  username: Andrew
   host: localhost
-  encoding: utf8
-  socket: /var/run/mysqld/mysqld.sock
-
-cucumber:
-  <<: *TEST
+  encoding: UTF8
+  pool: 5
+  timeout: 5000

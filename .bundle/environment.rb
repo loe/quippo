@@ -174,9 +174,9 @@ end
 module Bundler
   ENV_LOADED   = true
   LOCKED_BY    = '0.9.25'
-  FINGERPRINT  = "e9f6cb66f5c94eb6ba429b7b6da41bceb84c2d29"
+  FINGERPRINT  = "6cb33ead5ef0dd473841a98ac39b03925d0a511b"
   HOME         = '/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/bundler'
-  AUTOREQUIRES = {:test=>[["cucumber", false], ["factory_girl", false], ["mocha", false], ["shoulda", false], ["timecop", false]], :default=>[["RedCloth", false], ["daemons", false], ["formtastic", false], ["oauth", false], ["rails", false], ["twitter_oauth", false], ["will_paginate", false], ["yajl-ruby", false]]}
+  AUTOREQUIRES = {:test=>[["cucumber", false], ["factory_girl", false], ["mocha", false], ["shoulda", false], ["timecop", false]], :default=>[["RedCloth", false], ["daemons", false], ["formtastic", false], ["oauth", false], ["pg", false], ["rails", false], ["twitter_oauth", false], ["will_paginate", false], ["yajl-ruby", false]]}
   SPECS        = [
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/rake-0.8.7.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/rake-0.8.7/lib"], :name=>"rake"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/RedCloth-4.2.2.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/RedCloth-4.2.2/lib", "/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/RedCloth-4.2.2/ext", "/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/RedCloth-4.2.2/lib/case_sensitive_require"], :name=>"RedCloth"},
@@ -201,6 +201,7 @@ module Bundler
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/mocha-0.9.8.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/mocha-0.9.8/lib"], :name=>"mocha"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/ruby-hmac-0.4.0.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/ruby-hmac-0.4.0/lib"], :name=>"ruby-hmac"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/oauth-0.3.2.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/oauth-0.3.2/lib"], :name=>"oauth"},
+        {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/pg-0.9.0.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/pg-0.9.0/lib", "/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/pg-0.9.0/ext"], :name=>"pg"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/rails-2.3.8.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/rails-2.3.8/lib"], :name=>"rails"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/shoulda-2.10.3.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/shoulda-2.10.3/lib"], :name=>"shoulda"},
         {:loaded_from=>"/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/specifications/timecop-0.3.4.gemspec", :load_paths=>["/Users/Andrew/.rvm/gems/ree-1.8.7-2009.10/gems/timecop-0.3.4/lib"], :name=>"timecop"},

@@ -1,6 +1,7 @@
 source :gemcutter
 
 gem 'rails', '2.3.8'
+gem 'pg'
 gem 'will_paginate'
 gem 'oauth', '0.3.2'
 gem 'twitter_oauth'
