@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -18,32 +18,6 @@ Rails::Initializer.run do |config|
   # config.frameworks -= [ :action_mailer ]
 
   # Specify gems that this application depends on.
-  config.gem 'mislav-will_paginate',
-             :lib => 'will_paginate',
-             :source => 'http://gems.github.com',
-             :version => '~> 2.3.11'
-             
-  config.gem 'rack',
-             :version => '>= 1.0.0'
-             
-  config.gem 'oauth',
-             :version => '0.3.2'
-             
-  config.gem 'moomerman-twitter_oauth',
-             :lib => 'twitter_oauth',
-             :source => 'http://gems.github.com',
-             :version => '>= 0.2.1'
-             
-  config.gem 'yajl-ruby',
-             :lib => 'yajl'
-  
-  config.gem 'daemons',
-             :lib => false,
-             :version => '>= 1.0.10'
-             
-  config.gem 'RedCloth',
-             :lib => 'redcloth',
-             :version => '4.2.2'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -51,7 +25,6 @@ Rails::Initializer.run do |config|
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
   
   # Add the vendor/gems/*/lib directories to the LOAD_PATH
-  config.load_paths += Dir.glob(File.join(RAILS_ROOT, 'vendor', 'gems', '*', 'lib'))
 
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)

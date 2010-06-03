@@ -1,0 +1,117 @@
+--- 
+dependencies: 
+  twitter_oauth: 
+    group: 
+    - :default
+    version: ">= 0"
+  rails: 
+    group: 
+    - :default
+    version: = 2.3.8
+  timecop: 
+    group: 
+    - :test
+    version: ">= 0"
+  oauth: 
+    group: 
+    - :default
+    version: = 0.3.2
+  shoulda: 
+    group: 
+    - :test
+    version: ">= 0"
+  formtastic: 
+    group: 
+    - :default
+    version: ">= 0"
+  factory_girl: 
+    group: 
+    - :test
+    version: ">= 0"
+  will_paginate: 
+    group: 
+    - :default
+    version: ">= 0"
+  mocha: 
+    group: 
+    - :test
+    version: ">= 0"
+  cucumber: 
+    group: 
+    - :test
+    version: ">= 0"
+  daemons: 
+    group: 
+    - :default
+    version: ">= 0"
+  RedCloth: 
+    group: 
+    - :default
+    version: = 4.2.2
+  yajl-ruby: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- rake: 
+    version: 0.8.7
+- RedCloth: 
+    version: 4.2.2
+- activesupport: 
+    version: 2.3.8
+- rack: 
+    version: 1.1.0
+- actionpack: 
+    version: 2.3.8
+- actionmailer: 
+    version: 2.3.8
+- activerecord: 
+    version: 2.3.8
+- activeresource: 
+    version: 2.3.8
+- builder: 
+    version: 2.1.2
+- diff-lcs: 
+    version: 1.1.2
+- trollop: 
+    version: 1.16.2
+- gherkin: 
+    version: 1.0.30
+- json_pure: 
+    version: 1.4.3
+- term-ansicolor: 
+    version: 1.0.5
+- cucumber: 
+    version: 0.7.3
+- daemons: 
+    version: 1.0.10
+- factory_girl: 
+    version: 1.2.4
+- formtastic: 
+    version: 0.9.10
+- json: 
+    version: 1.4.3
+- mime-types: 
+    version: "1.16"
+- mocha: 
+    version: 0.9.8
+- ruby-hmac: 
+    version: 0.4.0
+- oauth: 
+    version: 0.3.2
+- rails: 
+    version: 2.3.8
+- shoulda: 
+    version: 2.10.3
+- timecop: 
+    version: 0.3.4
+- twitter_oauth: 
+    version: 0.2.1
+- will_paginate: 
+    version: 2.3.14
+- yajl-ruby: 
+    version: 0.7.6
+hash: e9f6cb66f5c94eb6ba429b7b6da41bceb84c2d29
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
