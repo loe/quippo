@@ -190,6 +190,8 @@ module ActiveRecord
           sql << ", #{options[:group_field]} AS #{options[:group_alias]}" if options[:group]
           if options[:from]
             sql << " FROM #{options[:from]} "
+          elsif scope && scope[:from] && !use_workaround
+            sql << " FROM #{scope[:from]} "
           else
             sql << " FROM (SELECT #{distinct}#{column_name}" if use_workaround
             sql << " FROM #{connection.quote_table_name(table_name)} "
@@ -292,12 +294,15 @@ module ActiveRecord
         end
 
         def type_cast_calculated_value(value, column, operation = nil)
-          operation = operation.to_s.downcase
-          case operation
+          if value.is_a?(String) || value.nil?
+            case operation.to_s.downcase
             when 'count' then value.to_i
             when 'sum'   then type_cast_using_column(value || '0', column)
-            when 'avg'   then value && (value.is_a?(Fixnum) ? value.to_f : value).to_d
+            when 'avg' then value.try(:to_d)
             else type_cast_using_column(value, column)
+            end
+          else
+            value
           end
         end
 

@@ -16,6 +16,10 @@ module ActiveRecord
           db.results_as_hash  = true if defined? SQLite::Version
           db.type_translation = false
 
+          message = "Support for SQLite2Adapter and DeprecatedSQLiteAdapter has been removed from Rails 3. "
+          message << "You should migrate to SQLite 3+ or use the plugin from git://github.com/rails/sqlite2_adapter.git with Rails 3."
+          ActiveSupport::Deprecation.warn(message)
+
           # "Downgrade" deprecated sqlite API
           if SQLite.const_defined?(:Version)
             ConnectionAdapters::SQLite2Adapter.new(db, logger, config)
@@ -27,6 +31,10 @@ module ActiveRecord
 
       private
         def parse_sqlite_config!(config)
+          if config.include?(:dbfile)
+            ActiveSupport::Deprecation.warn "Please update config/database.yml to use 'database' instead of 'dbfile'"
+          end
+
           config[:database] ||= config[:dbfile]
           # Require database.
           unless config[:database]
@@ -101,6 +109,10 @@ module ActiveRecord
       end
 
       def supports_migrations? #:nodoc:
+        true
+      end
+
+      def supports_primary_key? #:nodoc:
         true
       end
 
@@ -208,20 +220,20 @@ module ActiveRecord
         SQL
 
         execute(sql, name).map do |row|
-          row[0]
+          row['name']
         end
       end
 
       def columns(table_name, name = nil) #:nodoc:
         table_structure(table_name).map do |field|
-          SQLiteColumn.new(field['name'], field['dflt_value'], field['type'], field['notnull'] == "0")
+          SQLiteColumn.new(field['name'], field['dflt_value'], field['type'], field['notnull'].to_i == 0)
         end
       end
 
       def indexes(table_name, name = nil) #:nodoc:
         execute("PRAGMA index_list(#{quote_table_name(table_name)})", name).map do |row|
           index = IndexDefinition.new(table_name, row['name'])
-          index.unique = row['unique'] != '0'
+          index.unique = row['unique'].to_i != 0
           index.columns = execute("PRAGMA index_info('#{index.name}')").map { |col| col['name'] }
           index
         end
@@ -232,8 +244,8 @@ module ActiveRecord
         column ? column['name'] : nil
       end
 
-      def remove_index(table_name, options={}) #:nodoc:
-        execute "DROP INDEX #{quote_column_name(index_name(table_name, options))}"
+      def remove_index!(table_name, index_name) #:nodoc:
+        execute "DROP INDEX #{quote_column_name(index_name)}"
       end
 
       def rename_table(name, new_name)

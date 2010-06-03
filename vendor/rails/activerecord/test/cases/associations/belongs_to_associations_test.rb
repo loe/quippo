@@ -31,6 +31,12 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
     assert_equal companies(:first_firm).name, client.firm_with_primary_key.name
   end
 
+  def test_belongs_to_with_primary_key_joins_on_correct_column
+    sql = Client.send(:construct_finder_sql, :joins => :firm_with_primary_key)
+    assert sql !~ /\.id/
+    assert sql =~ /\.name/
+  end
+
   def test_proxy_assignment
     account = Account.find(1)
     assert_nothing_raised { account.firm = account.firm }
@@ -58,6 +64,13 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
     citibank = Client.create("name" => "Primary key client")
     citibank.firm_with_primary_key = apple
     assert_equal apple.name, citibank.firm_name
+  end
+
+  def test_eager_loading_with_primary_key
+    apple = Firm.create("name" => "Apple")
+    citibank = Client.create("name" => "Citibank", :firm_name => "Apple")
+    citibank_result = Client.find(:first, :conditions => {:name => "Citibank"}, :include => :firm_with_primary_key)
+    assert_not_nil citibank_result.instance_variable_get("@firm_with_primary_key")
   end
 
   def test_no_unexpected_aliasing
@@ -247,24 +260,6 @@ class BelongsToAssociationsTest < ActiveRecord::TestCase
 
     topic.update_attributes(:title => "37signals")
     assert_equal 1, Topic.find(topic.id)[:replies_count]
-  end
-
-  def test_belongs_to_counter_after_save
-    topic = Topic.create("title" => "monday night")
-    topic.replies.create("title" => "re: monday night", "content" => "football")
-    assert_equal 1, Topic.find(topic.id).send(:read_attribute, "replies_count")
-
-    topic.save
-    assert_equal 1, Topic.find(topic.id).send(:read_attribute, "replies_count")
-  end
-
-  def test_belongs_to_counter_after_update_attributes
-    topic = Topic.create("title" => "37s")
-    topic.replies.create("title" => "re: 37s", "content" => "rails")
-    assert_equal 1, Topic.find(topic.id).send(:read_attribute, "replies_count")
-
-    topic.update_attributes("title" => "37signals")
-    assert_equal 1, Topic.find(topic.id).send(:read_attribute, "replies_count")
   end
 
   def test_assignment_before_child_saved

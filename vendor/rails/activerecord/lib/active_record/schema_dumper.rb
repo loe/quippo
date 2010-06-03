@@ -84,7 +84,6 @@ HEADER
           elsif @connection.respond_to?(:primary_key)
             pk = @connection.primary_key(table)
           end
-          pk ||= 'id'
           
           tbl.print "  create_table #{table.inspect}"
           if columns.detect { |c| c.name == pk }
@@ -171,6 +170,9 @@ HEADER
             statment_parts << index.columns.inspect
             statment_parts << (':name => ' + index.name.inspect)
             statment_parts << ':unique => true' if index.unique
+
+            index_lengths = index.lengths.compact if index.lengths.is_a?(Array)
+            statment_parts << (':length => ' + Hash[*index.columns.zip(index.lengths).flatten].inspect) if index_lengths.present?
 
             '  ' + statment_parts.join(', ')
           end

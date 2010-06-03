@@ -5,6 +5,8 @@ require 'models/edge'
 require 'models/owner'
 require 'models/pet'
 require 'models/toy'
+require 'models/club'
+require 'models/organization'
 
 Company.has_many :accounts
 
@@ -21,8 +23,7 @@ class CalculationsTest < ActiveRecord::TestCase
 
   def test_should_average_field
     value = Account.average(:credit_limit)
-    assert_kind_of BigDecimal, value
-    assert_equal BigDecimal.new('53.0'), value
+    assert_equal 53.0, value
   end
 
   def test_should_return_nil_as_average
@@ -226,6 +227,10 @@ class CalculationsTest < ActiveRecord::TestCase
     assert_equal 15, companies(:rails_core).companies.sum(:id)
   end
 
+  def test_should_sum_scoped_field_with_from
+    assert_equal Club.count, Organization.clubs.count
+  end
+
   def test_should_sum_scoped_field_with_conditions
     assert_equal 8,  companies(:rails_core).companies.sum(:id, :conditions => 'id > 7')
   end
@@ -292,7 +297,7 @@ class CalculationsTest < ActiveRecord::TestCase
   end
 
   def test_should_sum_expression
-    assert_equal '636', Account.sum("2 * credit_limit")
+    assert_equal 636, Account.sum("2 * credit_limit").to_i
   end
 
   def test_count_with_from_option
