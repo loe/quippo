@@ -9,3 +9,5 @@ coverage/*
 !.keep
 db/sphinx/*
 config/development.sphinx.conf
+.bundle
+tmp/*
