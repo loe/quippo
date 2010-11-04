@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   database: quippo_development
-  username: Andrew
+  username: quippo
   host: localhost
   encoding: UTF8
   pool: 5
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   database: quippo_test
-  username: Andrew
+  username: quippo
   host: localhost
   encoding: UTF8
   pool: 5
